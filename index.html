@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="style.css">
   <!-- Add AOS CSS in the head section -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -111,7 +112,15 @@
         </button>
         <button class="btn d-flex align-items-center position-relative">
           <i class="bi bi-cart fs-5"></i>
-          <span class="d-none d-md-inline ms-2">Cart</span>
+          <a href="cart.html" class="btn btn-outline-light position-relative">
+            🛒
+            <span class="d-none d-md-inline ms-2">Cart</span>
+            <span id="cart-count"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              0
+            </span>
+          </a>
+
           <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success">0</span>
         </button>
       </div>
@@ -147,13 +156,16 @@
           <span class="fw-bold">Get 30% Discount Now</span>
           <a href="#" class="btn btn-light btn-sm ms-2 fw-bold rounded-pill px-3">Sale</a>
         </div>
-        <a id="nav-login-btn" href="logiin.html" class="btn btn-success btn-sm ms-2 fw-bold rounded-pill px-4 py-2 shadow-sm" style="border: none; background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%); color: #fff; font-size: 1rem; letter-spacing: 0.5px; transition: background 0.2s; text-decoration: none;">Login</a>
+        <a id="nav-login-btn" href="logiin.html"
+          class="btn btn-success btn-sm ms-2 fw-bold rounded-pill px-4 py-2 shadow-sm"
+          style="border: none; background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%); color: #fff; font-size: 1rem; letter-spacing: 0.5px; transition: background 0.2s; text-decoration: none;">Login</a>
         <!-- The nav-login-btn is dynamically updated by JS for login/logout -->
       </div>
     </div>
   </nav>
   <!-- Full-Width Auto Sliding Banner -->
-  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000" data-aos="zoom-in" data-aos-delay="300">
+  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000"
+    data-aos="zoom-in" data-aos-delay="300">
     <div class="carousel-inner">
       <!-- Slide 1 -->
       <div class="carousel-item active">
@@ -347,17 +359,18 @@
   <section class="product-section container-fluid px-4 py-5 bg-light" data-aos="fade-up" data-aos-delay="700">
     <div class="product-scroll d-flex flex-nowrap overflow-auto gap-3">
       <!-- Product Card 1 -->
-      <div class="product-card flex-shrink-0" style="width: 260px; min-height: 100%;" data-aos="zoom-in" data-aos-delay="0">
+     <div class="product-card flex-shrink-0" style="width: 260px; min-height: 100%;" data-aos="zoom-in"
+        data-aos-delay="100">
         <div class="product-img">
-          <span class="discount-badge">25% Off</span>
-          <img src="../orange.jpg" alt="Orange">
+          <span class="discount-badge">15% Off</span>
+          <img src="../orrange" alt="Apple">
         </div>
         <div class="product-info">
-          <h6>Best-one Profitable business makes your profit</h6>
-          <p class="weight">500g Pack</p>
+          <h6>Fresh orrange from Farm</h6>
+          <p class="weight">1lt Pack</p>
           <div class="price">
-            <span class="current-price">$99.00</span>
-            <span class="old-price">$136.00</span>
+            <span class="current-price">$65.00</span>
+            <span class="old-price">$58.00</span>
           </div>
           <div class="actions">
             <div class="quantity">
@@ -365,15 +378,19 @@
               <input type="number" value="1" min="1">
               <button>+</button>
             </div>
-            <button class="add-btn">
+            <button class="add-btn" onclick="addToCart('orrange',65)">
               Add <i class="bi bi-cart"></i>
             </button>
           </div>
         </div>
       </div>
 
+
+
+
       <!-- Product Card 2 -->
-      <div class="product-card flex-shrink-0" style="width: 260px; min-height: 100%;" data-aos="zoom-in" data-aos-delay="100">
+      <div class="product-card flex-shrink-0" style="width: 260px; min-height: 100%;" data-aos="zoom-in"
+        data-aos-delay="100">
         <div class="product-img">
           <span class="discount-badge">15% Off</span>
           <img src="../Apple.jpg" alt="Apple">
@@ -391,7 +408,7 @@
               <input type="number" value="1" min="1">
               <button>+</button>
             </div>
-            <button class="add-btn">
+            <button class="add-btn" onclick="addToCart('Red apple',49)">
               Add <i class="bi bi-cart"></i>
             </button>
           </div>
@@ -399,7 +416,8 @@
       </div>
 
       <!-- Product Card 3 -->
-      <div class="product-card flex-shrink-0" style="width: 260px; min-height: 100%;" data-aos="zoom-in" data-aos-delay="200">
+      <div class="product-card flex-shrink-0" style="width: 260px; min-height: 100%;" data-aos="zoom-in"
+        data-aos-delay="200">
         <div class="product-img">
           <span class="discount-badge">10% Off</span>
           <img src="../banana.jpg" alt="Banana">
@@ -417,7 +435,7 @@
               <input type="number" value="1" min="1">
               <button>+</button>
             </div>
-            <button class="add-btn">
+            <button class="add-btn" onclick="addToCart('banana',29)">
               Add <i class="bi bi-cart"></i>
             </button>
           </div>
@@ -425,7 +443,8 @@
       </div>
 
       <!-- Product Card 4 -->
-      <div class="product-card flex-shrink-0" style="width: 260px; height: 100%;" data-aos="zoom-in" data-aos-delay="300">
+      <div class="product-card flex-shrink-0" style="width: 260px; height: 100%;" data-aos="zoom-in"
+        data-aos-delay="300">
         <div class="product-img">
           <span class="discount-badge">30% Off</span>
           <img src="../grapes.jpg" alt="Grapes">
@@ -451,7 +470,8 @@
       </div>
 
       <!-- Product Card 5 -->
-      <div class="product-card flex-shrink-0" style="width: 260px; min-height: 100%;" data-aos="zoom-in" data-aos-delay="400">
+      <div class="product-card flex-shrink-0" style="width: 260px; min-height: 100%;" data-aos="zoom-in"
+        data-aos-delay="400">
         <div class="product-img">
           <span class="discount-badge">20% Off</span>
           <img src="../onion.jpg" alt="Onion">
@@ -477,7 +497,8 @@
       </div>
 
       <!-- Product Card 6 -->
-      <div class="product-card flex-shrink-0" style="width: 260px; min-height: 100%;" data-aos="zoom-in" data-aos-delay="500">
+      <div class="product-card flex-shrink-0" style="width: 260px; min-height: 100%;" data-aos="zoom-in"
+        data-aos-delay="500">
         <div class="product-img">
           <span class="discount-badge">12% Off</span>
           <img src="../Potatto.jpg" alt="Potato">
@@ -506,7 +527,8 @@
   </section>
 
 
-  <div class="d-flex justify-content-between align-items-center flex-wrap mb-4" data-aos="fade-left" data-aos-delay="800">
+  <div class="d-flex justify-content-between align-items-center flex-wrap mb-4" data-aos="fade-left"
+    data-aos-delay="800">
     <h2 class="fw-bold">Products With Discounts</h2>
     <div class="countdown d-flex gap-2">
       <div class="time-box bg-success text-white px-3 py-2 rounded text-center">
@@ -539,7 +561,8 @@
 
         <!-- Card 2 -->
         <div class="col">
-          <div class="product-card bg-white shadow-sm p-3 position-relative" style="width: 400px;" data-aos="fade-up" data-aos-delay="0">
+          <div class="product-card bg-white shadow-sm p-3 position-relative" style="width: 400px;" data-aos="fade-up"
+            data-aos-delay="0">
             <span class="discount-badge">25% Off</span>
             <img src="../Apple.jpg" class="mb-2" alt="">
             <h6 class="fw-bold">Red Apples</h6>
@@ -555,7 +578,8 @@
 
         <!-- Card 3 -->
         <div class="col">
-          <div class="product-card bg-white shadow-sm p-3 position-relative" style="width: 400px;" data-aos="fade-up" data-aos-delay="100">
+          <div class="product-card bg-white shadow-sm p-3 position-relative" style="width: 400px;" data-aos="fade-up"
+            data-aos-delay="100">
             <span class="discount-badge">15% Off</span>
             <img src="../banana.jpg" class="mb-2" alt="">
             <h6 class="fw-bold">Organic Banana</h6>
@@ -582,7 +606,8 @@
 
         <!-- Card 5 -->
         <div class="col">
-          <div class="product-card bg-white shadow-sm p-3 position-relative" style="width: 400px;" data-aos="fade-up" data-aos-delay="200">
+          <div class="product-card bg-white shadow-sm p-3 position-relative" style="width: 400px;" data-aos="fade-up"
+            data-aos-delay="200">
             <span class="discount-badge">10% Off</span>
             <img src="../grapes.jpg" class="mb-2" alt="">
             <h6 class="fw-bold">Black Grapes</h6>
@@ -598,7 +623,8 @@
 
         <!-- Card 6 -->
         <div class="col">
-          <div class="product-card bg-white shadow-sm p-3 position-relative" style="width: 400px;" data-aos="fade-up" data-aos-delay="300">
+          <div class="product-card bg-white shadow-sm p-3 position-relative" style="width: 400px;" data-aos="fade-up"
+            data-aos-delay="300">
             <span class="discount-badge">30% Off</span>
             <img src="../onion.jpg" class="mb-2" alt="">
             <h6 class="fw-bold">Red Onions</h6>
@@ -624,7 +650,8 @@
         <!-- Card 1 -->
 
         <div class="col">
-          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up" data-aos-delay="0">
+          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up"
+            data-aos-delay="0">
             <span class="discount-badge">9% Off</span>
 
             <!-- Product image -->
@@ -657,7 +684,8 @@
 
         <!-- Card 2 -->
         <div class="col">
-          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up" data-aos-delay="100">
+          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up"
+            data-aos-delay="100">
             <span class="discount-badge">9% Off</span>
 
             <!-- Product image -->
@@ -690,7 +718,8 @@
 
         <!-- Card 3 -->
         <div class="col">
-          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up" data-aos-delay="200">
+          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up"
+            data-aos-delay="200">
             <span class="discount-badge">9% Off</span>
 
             <!-- Product image -->
@@ -724,7 +753,8 @@
 
         <!-- Card 4 -->
         <div class="col">
-          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up" data-aos-delay="300">
+          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up"
+            data-aos-delay="300">
             <span class="discount-badge">9% Off</span>
 
             <!-- Product image -->
@@ -758,7 +788,8 @@
 
         <!-- Card 5 -->
         <div class="col">
-          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up" data-aos-delay="400">
+          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up"
+            data-aos-delay="400">
             <span class="discount-badge">9% Off</span>
 
             <!-- Product image -->
@@ -792,7 +823,8 @@
 
         <!-- Card 6 -->
         <div class="col">
-          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up" data-aos-delay="500">
+          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up"
+            data-aos-delay="500">
             <span class="discount-badge">9% Off</span>
 
             <!-- Product image -->
@@ -826,7 +858,8 @@
 
         <!-- Card 7 -->
         <div class="col">
-          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up" data-aos-delay="600">
+          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up"
+            data-aos-delay="600">
             <span class="discount-badge">9% Off</span>
 
             <!-- Product image -->
@@ -859,7 +892,8 @@
 
         <!-- Card 8 -->
         <div class="col">
-          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up" data-aos-delay="700">
+          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up"
+            data-aos-delay="700">
             <span class="discount-badge">9% Off</span>
 
             <!-- Product image -->
@@ -892,7 +926,8 @@
 
         <!-- Card 9 -->
         <div class="col">
-          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up" data-aos-delay="800">
+          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up"
+            data-aos-delay="800">
             <span class="discount-badge">9% Off</span>
 
             <!-- Product image -->
@@ -926,7 +961,8 @@
 
         <!-- Card 10 -->
         <div class="col">
-          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up" data-aos-delay="900">
+          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up"
+            data-aos-delay="900">
             <span class="discount-badge">9% Off</span>
 
             <!-- Product image -->
@@ -959,7 +995,8 @@
 
         <!-- Card 11 -->
         <div class="col">
-          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up" data-aos-delay="1000">
+          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up"
+            data-aos-delay="1000">
             <span class="discount-badge">9% Off</span>
 
             <!-- Product image -->
@@ -992,7 +1029,8 @@
 
         <!-- Card 12 -->
         <div class="col">
-          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up" data-aos-delay="1100">
+          <div class="food-card p-3 text-center bg-white shadow-sm position-relative" data-aos="fade-up"
+            data-aos-delay="1100">
             <span class="discount-badge">9% Off</span>
 
             <!-- Product image -->
@@ -1019,7 +1057,8 @@
               <input type="number" value="1" class="form-control mx-2 form-control-sm w-25 text-center">
               <button class="btn btn-outline-secondary btn-sm">+</button>
             </div>
-            <button class="btn btn-success btn-sm w-100">Add <i class="bi bi-cart"></i></button>
+            <button class="btn btn-success btn-sm w-100" onclick="addToCart('Spicy Noodles',3.99)">Add <i
+                class="bi bi-cart"></i></button>
           </div>
         </div>
 
@@ -1415,7 +1454,8 @@
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlhKAByCkA9Om3lRlLKWOS-CrhYniOnGFqjQ&s"
             alt="App Store" height="35">
         </div>
-      </div>    </div>
+      </div>
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -1425,4 +1465,5 @@
   <script src="index.js"></script>
 
 </body>
+
 </html>

@@ -151,3 +151,70 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// Add to cart function
+function addToCart(name, price) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let existing = cart.find(item => item.name === name);
+
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({ name, price, qty: 1 });
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert(`${name} added to cart`);
+}
+
+// Load cart items into the table on cart.html
+function loadCartItems() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cartContainer = document.getElementById('cart-items');
+  const totalElement = document.getElementById('cart-total');
+  let total = 0;
+  cartContainer.innerHTML = '';
+
+  cart.forEach((item, index) => {
+    const subtotal = item.price * item.qty;
+    total += subtotal;
+
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${item.name}</td>
+      <td>₹${item.price}</td>
+      <td>
+        <input type="number" min="1" value="${item.qty}" onchange="updateQty(${index}, this.value)">
+      </td>
+      <td>₹${subtotal}</td>
+      <td><button class="btn btn-sm btn-danger" onclick="removeItem(${index})">Remove</button></td>
+    `;
+    cartContainer.appendChild(row);
+  });
+
+  totalElement.textContent = total;
+}
+
+// Update quantity
+function updateQty(index, newQty) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cart[index].qty = parseInt(newQty);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  loadCartItems();
+}
+
+// Remove item
+function removeItem(index) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cart.splice(index, 1);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  loadCartItems();
+}
+
+// When cart page loads
+document.addEventListener("DOMContentLoaded", function () {
+  if (document.getElementById("cart-items")) {
+    loadCartItems();
+  }
+});
+
