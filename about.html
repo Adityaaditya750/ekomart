@@ -59,19 +59,171 @@
         font-size: 1.8rem;
       }
     }
+    .footer .bi {
+  transition: color 0.3s, transform 0.3s;
+}
+.footer .bi:hover {
+  color: #66a80f !important;
+  transform: scale(1.2) rotate(-8deg);
+}
+
+@media (max-width: 768px) {
+  .top-trending-section img,
+  .footer img {
+    max-height: 100px;
+  }
+
+  .footer .d-flex {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px;
+    /* Aditya  */
+  }
+}
   </style>
 </head>
 <body>
+    <!-- Promo Top Bar -->
+  <div class="bg-success text-white py-2 promo-bar">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center small">
+      <div class="d-flex align-items-center gap-2 mb-2 mb-md-0">
+        <i class="bi bi-truck fs-5 me-2"></i>
+        <span>FREE delivery & 40% Discount for next 3 orders! Place your 1st order in:</span>
+        <strong class="ms-1"><span id="promo-days">20</span></strong> Days
+        <strong><span id="promo-hours">23</span></strong> Hour
+        <strong><span id="promo-minutes">28</span></strong> Min
+        <strong><span id="promo-seconds">40</span></strong> Sec
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-telephone me-1"></i>
+        <span>Need help? Call Us:</span> <strong>+258 3268 21485</strong>
+      </div>
+    </div>
+  </div>
+  <!-- Secondary Header -->
+  <div class="bg-light border-bottom py-2">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap small text-muted">
+      <!-- Left Section -->
+      <div class="d-flex flex-wrap align-items-center gap-3">
+        <a href="#" class="text-muted text-decoration-none"><i class="bi bi-info-circle me-1"></i>About Us</a>
+        <a href="./logiin.html" class="text-muted text-decoration-none"><i class="bi bi-person me-1"></i>My Account</a>
+        <a href="#" class="text-muted text-decoration-none"><i class="bi bi-heart me-1"></i>Wishlist</a>
+        <span class="vr"></span>
+        <span><i class="bi bi-clock me-1"></i>We deliver everyday 7:00 - 22:00</span>
+      </div>
+      <!-- Right Section -->
+      <div class="d-flex flex-wrap align-items-center gap-3">
+        <div class="dropdown">
+          <a class="dropdown-toggle text-muted text-decoration-none" href="#" role="button" data-bs-toggle="dropdown">
+            <i class="bi bi-translate me-1"></i>English
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">Hindi</a></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle text-muted text-decoration-none" href="#" role="button" data-bs-toggle="dropdown">
+            <i class="bi bi-currency-dollar me-1"></i>USD
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">USD</a></li>
+            <li><a class="dropdown-item" href="#">INR</a></li>
+          </ul>
+        </div>
+        <a href="#" class="text-muted text-decoration-none"><i class="bi bi-truck me-1"></i>Track Order</a>
+      </div>
+    </div>
+  </div>
+  <!-- Main Header -->
+  <div class="bg-white py-3 border-bottom sticky-top" style="z-index: 1020;" data-aos="fade-down" data-aos-delay="100">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+      <!-- Logo -->
+      <a href="#" class="d-flex align-items-center text-decoration-none me-4">
+        <img src="images/logo.png" alt="Logo" width="48" height="48" class="me-2">
+        <span class="fs-3 fw-bold text-dark">EKO</span><span class="fs-3 fw-bold text-success">MART</span>
+      </a>
+      <!-- Search Bar + Categories -->
+      <div class="d-flex flex-grow-1 mx-3" style="max-width: 600px; min-width: 260px;">
+        <div class="input-group shadow-sm rounded-3 overflow-hidden">
+          <button class="btn btn-light fw-bold text-dark border-end px-3 dropdown-toggle" data-bs-toggle="dropdown"
+            aria-expanded="false"><i class="bi bi-list"></i> Categories</button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Fruits & Vegetables</a></li>
+            <li><a class="dropdown-item" href="#">Dairy</a></li>
+            <li><a class="dropdown-item" href="#">Bakery</a></li>
+            <li><a class="dropdown-item" href="#">Meat</a></li>
+            <li><a class="dropdown-item" href="#">Snacks</a></li>
+            <li><a class="dropdown-item" href="#">Beverages</a></li>
+          </ul>
+          <input type="text" class="form-control border-0" placeholder="Search for products, categories or brands">
+          <button class="btn btn-success fw-bold px-4"><i class="bi bi-search me-1"></i>Search</button>
+        </div>
+      </div>
+      <!-- Right Icons -->
+      <div class="nav-icons d-flex align-items-center gap-2 ms-3">
+        <button class="btn d-flex align-items-center position-relative">
+          <i class="bi bi-person fs-5"></i>
+          <span class="d-none d-md-inline ms-2">Account</span>
+        </button>
+        <button class="btn d-flex align-items-center position-relative">
+          <i class="bi bi-bell fs-5"></i>
+          <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success">0</span>
+        </button>
+        <button class="btn d-flex align-items-center position-relative">
+          <i class="bi bi-heart fs-5"></i>
+          <span class="d-none d-md-inline ms-2">Wishlist</span>
+          <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success">0</span>
+        </button>
+        <button class="btn d-flex align-items-center position-relative">
+          <i class="bi bi-cart fs-5"></i>
+          <a href="cart.html" class="btn btn-outline-light position-relative">
+            🛒
+            <span class="d-none d-md-inline ms-2">Cart</span>
+            <span id="cart-count"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              0
+            </span>
+          </a>
 
-  <!-- Navbar -->
-  <nav class="bg-light border-bottom">
+          <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success">0</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+  </div>
+  <!-- Navigation Bar -->
+  <nav class="bg-light border-bottom" data-aos="fade-down" data-aos-delay="200">
     <div class="container d-flex justify-content-between align-items-center flex-wrap py-2">
+      <!-- Left Navigation Links -->
       <ul class="nav gap-1">
-        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="home.html">Home</a></li>
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-semibold px-3" href="home.html">Home</a></li>
         <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Shop</a></li>
+        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Vendors</a></li>
+        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Pages</a></li>
+        <li class="nav-item position-relative">
+          <a class="nav-link text-dark fw-semibold px-3" href="#">Dashboard
+            <span class="position-absolute top-0 start-100 translate-middle badge bg-success rounded-pill"
+              style="font-size: 0.6rem;">New</span>
+          </a>
+        </li>
+        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="contact.html">Contact</a></li>
       </ul>
+      
+          <button class="btn btn-success btn-sale shadow-sm ml-auto">
+      🎉 30% OFF
+    </button>
+  </div>
+      </div>
     </div>
   </nav>
+
+
 
   <!-- About Content -->
   <div class="container mt-5">
@@ -104,9 +256,124 @@
     </div>
   </div>
 
-  <footer class="text-center py-3 mt-5">
-    &copy; 2025 Ekomart. All rights reserved.
+  <footer class="footer bg-light pt-5" data-aos="fade-up" data-aos-delay="1400">
+    <div class="container">
+      <div class="row">
+        <!-- About Company -->
+        <div class="col-md-3 mb-4">
+          <h6 class="fw-bold">About Company</h6>
+          <div class="d-flex align-items-center my-3">
+            <div class="bg-white border rounded-circle d-flex align-items-center justify-content-center"
+              style="width: 45px; height: 45px;">
+              <i class="bi bi-telephone-fill text-success fs-5"></i>
+            </div>
+            <div class="ms-3">
+              <small class="text-muted">Have Question? Call Us 24/7</small>
+              <div class="text-success fw-bold">+258 3692 2569</div>
+            </div>
+          </div>
+          <ul class="list-unstyled text-muted small">
+            <li>Monday – Friday: <strong class="text-dark">8:00am – 6:00pm</strong></li>
+            <li>Saturday: <strong class="text-dark">8:00am – 6:00pm</strong></li>
+            <li>Sunday: <strong class="text-dark">Service Close</strong></li>
+          </ul>
+        </div>
+
+        <!-- Our Stores -->
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-bold">Our Stores</h6>
+          <ul class="list-unstyled text-muted">
+            <li><a href="#" class="text-decoration-none text-muted">Delivery Information</a></li>
+            <li><a href="#" class="text-decoration-none text-muted">Privacy Policy</a></li>
+            <li><a href="#" class="text-decoration-none text-muted">Terms & Conditions</a></li>
+            <li><a href="#" class="text-decoration-none text-muted">Support Center</a></li>
+            <li><a href="#" class="text-decoration-none text-muted">Careers</a></li>
+          </ul>
+        </div>
+
+        <!-- Shop Categories -->
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-bold">Shop Categories</h6>
+          <ul class="list-unstyled text-muted">
+            <li><a href="#" class="text-decoration-none text-muted">Contact Us</a></li>
+            <li><a href="#" class="text-decoration-none text-muted">Information</a></li>
+            <li><a href="#" class="text-decoration-none text-muted">About Us</a></li>
+            <li><a href="#" class="text-decoration-none text-muted">Careers</a></li>
+            <li><a href="#" class="text-decoration-none text-muted">Nest Stories</a></li>
+          </ul>
+        </div>
+
+        <!-- Useful Links -->
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-bold">Useful Links</h6>
+          <ul class="list-unstyled text-muted">
+            <li><a href="#" class="text-decoration-none text-muted">Cancellation & Returns</a></li>
+            <li><a href="#" class="text-decoration-none text-muted">Report Infringement</a></li>
+            <li><a href="#" class="text-decoration-none text-muted">Payments</a></li>
+            <li><a href="#" class="text-decoration-none text-muted">Shipping</a></li>
+            <li><a href="#" class="text-decoration-none text-muted">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="col-md-3 mb-4">
+          <h6 class="fw-bold">Our Newsletter</h6>
+          <p class="text-muted small">Subscribe to the mailing list to receive updates on the new arrivals and other
+            discounts</p>
+          <form class="d-flex mb-2">
+            <input type="email" class="form-control rounded-0" placeholder="Your email address">
+            <button class="btn btn-success rounded-0 ms-2">Subscribe</button>
+          </form>
+          <small class="text-muted">I would like to receive news and special offer</small>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3 border-top">
+        <div class="mb-2 mb-md-0">
+          <small>Copyright 2025 <strong class="text-dark">Ekomart</strong>. All rights reserved.</small>
+        </div>
+        <div class="d-flex align-items-center">
+          <span class="me-2">Follow Us:</span>
+          <div class="d-flex gap-2">
+            <a href="#" class="text-dark"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-dark"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-dark"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-dark"><i class="bi bi-whatsapp"></i></a>
+            <a href="#" class="text-dark"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment and App -->
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
+        <div class="mb-2 mb-md-0">
+          <span class="me-2">Payment Accepts:</span>
+          <img src="https://brandlogos.net/wp-content/uploads/2014/10/visa-logo.png" alt="Visa" height="25">
+          <img src="https://pngimg.com/uploads/mastercard/mastercard_PNG24.png" alt="Mastercard" height="25">
+          <img src="https://www.top-bank.ch/images/logo_540/paypal.png" alt="Paypal" height="25">
+          <img src="https://cdn-icons-png.flaticon.com/256/825/825539.png" alt="American Express" height="25">
+        </div>
+        <div>
+          <span class="me-2">Download App</span>
+          <img src="https://brandlogos.net/wp-content/uploads/2021/10/Google-Pay-logo-symbol-1.png" alt="Google Play"
+            height="35">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlhKAByCkA9Om3lRlLKWOS-CrhYniOnGFqjQ&s"
+            alt="App Store" height="35">
+        </div>
+      </div>
+    </div>
   </footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Add AOS JS and initialize with enhanced settings -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- JS moved to index.js -->
+  <script src="index.js"></script>
+
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
