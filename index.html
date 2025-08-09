@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +15,6 @@
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 </head>
-
 <body>
   <!-- Promo Top Bar -->
   <div class="bg-success text-white py-2 promo-bar">
@@ -41,7 +39,7 @@
       <!-- Left Section -->
       <div class="d-flex flex-wrap align-items-center gap-3">
         <a href="#" class="text-muted text-decoration-none"><i class="bi bi-info-circle me-1"></i>About Us</a>
-        <a href="#" class="text-muted text-decoration-none"><i class="bi bi-person me-1"></i>My Account</a>
+        <a href="./logiin.html" class="text-muted text-decoration-none"><i class="bi bi-person me-1"></i>My Account</a>
         <a href="#" class="text-muted text-decoration-none"><i class="bi bi-heart me-1"></i>Wishlist</a>
         <span class="vr"></span>
         <span><i class="bi bi-clock me-1"></i>We deliver everyday 7:00 - 22:00</span>
@@ -135,12 +133,12 @@
     <div class="container d-flex justify-content-between align-items-center flex-wrap py-2">
       <!-- Left Navigation Links -->
       <ul class="nav gap-1">
-        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">About</a></li>
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-semibold px-3" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="about.html">About</a></li>
         <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Shop</a></li>
         <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Vendors</a></li>
         <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Pages</a></li>
-        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Blog</a></li>
         <li class="nav-item position-relative">
           <a class="nav-link text-dark fw-semibold px-3" href="#">Dashboard
             <span class="position-absolute top-0 start-100 translate-middle badge bg-success rounded-pill"
@@ -149,17 +147,11 @@
         </li>
         <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Contact</a></li>
       </ul>
-      <!-- Right Promo Box -->
-      <div class="d-flex align-items-center gap-2">
-        <span class="fw-semibold text-dark">Trending Products</span>
-        <div class="bg-success text-white d-flex align-items-center px-3 py-1 rounded-start">
-          <span class="fw-bold">Get 30% Discount Now</span>
-          <a href="#" class="btn btn-light btn-sm ms-2 fw-bold rounded-pill px-3">Sale</a>
-        </div>
-        <a id="nav-login-btn" href="logiin.html"
-          class="btn btn-success btn-sm ms-2 fw-bold rounded-pill px-4 py-2 shadow-sm"
-          style="border: none; background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%); color: #fff; font-size: 1rem; letter-spacing: 0.5px; transition: background 0.2s; text-decoration: none;">Login</a>
-        <!-- The nav-login-btn is dynamically updated by JS for login/logout -->
+      
+          <button class="btn btn-success btn-sale shadow-sm ml-auto">
+      🎉 30% OFF
+    </button>
+  </div>
       </div>
     </div>
   </nav>
@@ -462,7 +454,7 @@
               <input type="number" value="1" min="1">
               <button>+</button>
             </div>
-            <button class="add-btn">
+            <button class="add-btn" onclick="addToCart('Grapes',39)">
               Add <i class="bi bi-cart"></i>
             </button>
           </div>
@@ -489,7 +481,7 @@
               <input type="number" value="1" min="1">
               <button>+</button>
             </div>
-            <button class="add-btn">
+            <button class="add-btn" onclick="addToCart('Onion',24)">
               Add <i class="bi bi-cart"></i>
             </button>
           </div>
@@ -516,7 +508,7 @@
               <input type="number" value="1" min="1">
               <button>+</button>
             </div>
-            <button class="add-btn">
+            <button class="add-btn" onclick="addToCart('Potato',20)">
               Add <i class="bi bi-cart"></i>
             </button>
           </div>
