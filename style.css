@@ -1,8 +1,10 @@
 /* Fix for Bootstrap dropdown in flex nav bar */
 .nav .dropdown {
   position: absolute !important;
+.dropdown {
+  position: relative;
 }
-.nav .dropdown-menu {
+.dropdown-menu {
   position: absolute !important;
   top: 100%;
   left: 0;
@@ -10,9 +12,10 @@
   display: none;
   overflow: visible !important;
 }
-.nav .dropdown.show .dropdown-menu {
+.dropdown.show .dropdown-menu {
   display: block;
 }
+
 /* --- Unified Feature Box Styles (Screenshot Accurate) --- */
 .feature-box {
   display: flex;
@@ -922,4 +925,5 @@ img:hover {
   flex: 0 0 auto;
   width: 120px; /* Adjust size as needed */
   text-align: center;
+}
 }
