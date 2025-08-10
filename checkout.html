@@ -12,6 +12,7 @@
     .pay-btn { background:#68a131; color:#fff; font-weight:600; }
     .pay-btn:hover { background:#5b8e2e; }
   </style>
+  
 </head>
 <body>
   <div class="container py-5">
@@ -51,6 +52,14 @@
 
             <div class="col-12">
               <button id="payNow" type="button" class="btn pay-btn">Pay Now</button>
+
+<script>
+document.getElementById("payNow").addEventListener("click", function () {
+    // Simulated payment success
+    window.location.href = "orderconformation.html";
+});
+</script>
+
             </div>
           </form>
         </div>
@@ -166,9 +175,9 @@ document.getElementById('payNow').addEventListener('click', function(){
   const messageDiv = document.getElementById('message');
   messageDiv.innerHTML = `<div class="alert alert-success">Payment successful ✅. Order placed. Redirecting...</div>`;
 
-  setTimeout(()=> {
-    window.location.href = `order-confirmation.html?orderId=${orderId}`;
-  }, 900);
+setTimeout(() => {
+  window.location.href = `orderconformation.html?orderId=${orderId}`;
+}, 900);
 });
 </script>
 </body>

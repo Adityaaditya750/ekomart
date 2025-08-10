@@ -1,12 +1,12 @@
 /* Fix for Bootstrap dropdown in flex nav bar */
 .nav .dropdown {
-  position: relative;
+  position: absolute !important;
 }
 .nav .dropdown-menu {
   position: absolute !important;
   top: 100%;
   left: 0;
-  z-index: 1050;
+  z-index: 1000;
   display: none;
   overflow: visible !important;
 }
