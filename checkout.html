@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Checkout - Ekomart</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background:#f8f9fa; font-family: 'Segoe UI',sans-serif; }
+    .checkout-card { border-radius:8px; background:#fff; padding:20px; }
+    .checkout-summary { border:1px solid #e6e6e6; padding:16px; border-radius:8px; background:#fff; }
+    .pay-btn { background:#68a131; color:#fff; font-weight:600; }
+    .pay-btn:hover { background:#5b8e2e; }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <h2 class="mb-4">Checkout</h2>
+
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <div class="checkout-card">
+          <h5>Billing Details</h5>
+          <form id="checkoutForm" class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Full name</label>
+              <input id="custName" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Email</label>
+              <input id="custEmail" type="email" class="form-control" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Address</label>
+              <input id="custAddress" class="form-control" placeholder="Street, City, ZIP" required>
+            </div>
+
+            <h6 class="mt-3">Payment (simulated)</h6>
+            <div class="col-md-6">
+              <label class="form-label">Card number</label>
+              <input id="cardNumber" class="form-control" placeholder="4111 1111 1111 1111" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Expiry</label>
+              <input id="cardExpiry" class="form-control" placeholder="MM/YY" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">CVV</label>
+              <input id="cardCvv" class="form-control" placeholder="123" required>
+            </div>
+
+            <div class="col-12">
+              <button id="payNow" type="button" class="btn pay-btn">Pay Now</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="checkout-summary">
+          <h6>Order Summary</h6>
+          <div id="orderItems" class="mb-3"></div>
+          <div class="d-flex justify-content-between">
+            <div>Subtotal</div><div>₹<span id="sumSubtotal">0.00</span></div>
+          </div>
+          <div class="d-flex justify-content-between mt-2">
+            <div>Shipping</div>
+            <div>
+              <select id="shippingSelect" class="form-select form-select-sm w-auto d-inline-block">
+                <option value="0">Free</option>
+                <option value="50">Express (₹50)</option>
+              </select>
+            </div>
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between">
+            <strong>Total</strong><strong>₹<span id="sumTotal">0.00</span></strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="message" class="mt-4"></div>
+  </div>
+
+<script>
+/* Helper functions (mirrors cart.js structure) */
+function getCart(){ return JSON.parse(localStorage.getItem("cart")) || []; }
+function saveOrders(orders){ localStorage.setItem("orders", JSON.stringify(orders)); }
+function getOrders(){ return JSON.parse(localStorage.getItem("orders")) || []; }
+
+function generateOrderID(){
+  return 'ORD' + Math.floor(100000 + Math.random()*900000);
+}
+
+/* Render summary */
+function renderSummary(){
+  const items = getCart();
+  const orderItems = document.getElementById('orderItems');
+  orderItems.innerHTML = '';
+  let subtotal = 0;
+  if(items.length === 0){
+    orderItems.innerHTML = '<div class="text-muted">Your cart is empty.</div>';
+  } else {
+    items.forEach(it=>{
+      const line = document.createElement('div');
+      const price = (parseFloat(it.price)||0)*(it.qty||1);
+      subtotal += price;
+      line.innerHTML = `<div class="d-flex justify-content-between"><div>${it.name} x ${it.qty}</div><div>₹${price.toFixed(2)}</div></div>`;
+      orderItems.appendChild(line);
+    });
+  }
+  document.getElementById('sumSubtotal').innerText = subtotal.toFixed(2);
+  updateTotals();
+}
+
+function updateTotals(){
+  const subtotal = parseFloat(document.getElementById('sumSubtotal').innerText)||0;
+  const shipping = parseFloat(document.getElementById('shippingSelect').value)||0;
+  document.getElementById('sumTotal').innerText = (subtotal + shipping).toFixed(2);
+}
+
+document.getElementById('shippingSelect').addEventListener('change', updateTotals);
+
+renderSummary();
+
+/* Pay Now (simulated) */
+document.getElementById('payNow').addEventListener('click', function(){
+  const items = getCart();
+  if(!items || items.length===0){
+    alert('Your cart is empty.');
+    return;
+  }
+
+  // simple form validation
+  const name = document.getElementById('custName').value.trim();
+  const email = document.getElementById('custEmail').value.trim();
+  const address = document.getElementById('custAddress').value.trim();
+  const card = document.getElementById('cardNumber').value.trim();
+  if(!name||!email||!address||!card){ alert('Please fill billing + payment details.'); return; }
+
+  // create order
+  const orderId = generateOrderID();
+  const subtotal = parseFloat(document.getElementById('sumSubtotal').innerText)||0;
+  const shipping = parseFloat(document.getElementById('shippingSelect').value)||0;
+  const total = subtotal + shipping;
+
+  const order = {
+    id: orderId,
+    createdAt: new Date().toISOString(),
+    status: 'Processing',
+    items: items,
+    customer: { name, email, address },
+    subtotal, shipping, total
+  };
+
+  // save order into 'orders' array in localStorage
+  const orders = getOrders();
+  orders.push(order);
+  saveOrders(orders);
+
+  // clear cart
+  localStorage.removeItem('cart');
+
+  // show confirmation and redirect to order confirmation page
+  const messageDiv = document.getElementById('message');
+  messageDiv.innerHTML = `<div class="alert alert-success">Payment successful ✅. Order placed. Redirecting...</div>`;
+
+  setTimeout(()=> {
+    window.location.href = `order-confirmation.html?orderId=${orderId}`;
+  }, 900);
+});
+</script>
+</body>
+</html>
