@@ -230,49 +230,71 @@
       </div>
     </div>
   </nav>
-
-  
-
-  <!-- Home Page Content -->
-  <div class="container mt-5">
-    <div class="text-center">
-      <h1>Welcome to Ekomart</h1>
-      <p class="lead">Your one-stop shop for fresh groceries & essentials.</p>
-      <a href="products.html" class="btn btn-success">Shop Now</a>
+<!-- Home Page Content -->
+  <!-- Full-Width Banner Carousel with Shop Now Button Overlay -->
+  <div class="w-100 position-relative mb-5" style="margin-top: 2rem;">
+    <div id="ekomartBannerCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./img/banner2.jpg" class="d-block w-100" alt="Banner 1" style="width:100vw; height:50vw; max-height:500px; object-fit:cover;">
+        </div>
+        <div class="carousel-item">
+          <img src="./img/banner4.jpg" class="d-block w-100" alt="Banner 2" style="width:100vw; height:50vw; max-height:500px; object-fit:cover;">
+        </div>
+        <div class="carousel-item">
+          <img src="./img/banner7.jpg" class="d-block w-100" alt="Banner 3" style="width:100vw; height:50vw; max-height:500px; object-fit:cover;">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#ekomartBannerCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#ekomartBannerCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
+    <!-- Overlayed Shop Now Button -->
+    <div class="position-absolute top-50 start-50 translate-middle text-center" style="z-index: 2;">
+      <h1 class="text-white fw-bold text-shadow" style="text-shadow:2px 2px 8px #000;">Welcome to Ekomart</h1>
+      <p class="lead text-white" style="text-shadow:1px 1px 6px #000;">Your one-stop shop for fresh groceries & essentials.</p>
+      <a href="home.html" class="btn btn-success btn-lg shadow">Shop Now</a>
+    </div>
+  </div>
+  <div class="container">
 
     <hr class="my-5">
 
     <div class="row g-4">
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
-          <img src="images/fruits.jpg" class="card-img-top" alt="Fresh Fruits">
+          <img src="./img/freshfruit.jpg" class="card-img-top" alt="Fresh Fruits">
           <div class="card-body">
             <h5 class="card-title">Fresh Fruits</h5>
             <p class="card-text">Get the freshest seasonal fruits delivered to your doorstep.</p>
-            <a href="products.html" class="btn btn-primary">Explore</a>
+            <a href="home.html" class="btn btn-primary">Explore</a>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
-          <img src="images/vegetables.jpg" class="card-img-top" alt="Fresh Vegetables">
+          <img src="./img/freshvegetable.jpg" class="card-img-top" alt="Fresh Vegetables">
           <div class="card-body">
             <h5 class="card-title">Fresh Vegetables</h5>
             <p class="card-text">Locally sourced veggies straight from the farm.</p>
-            <a href="products.html" class="btn btn-primary">Explore</a>
+            <a href="home.html" class="btn btn-primary">Explore</a>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
-          <img src="images/dairy.jpg" class="card-img-top" alt="Dairy Products">
+          <img src="./img/BeautyProducts.jpg" class="card-img-top" alt="Dairy Products">
           <div class="card-body">
             <h5 class="card-title">Dairy Products</h5>
             <p class="card-text">Fresh milk, cheese, and more from trusted farms.</p>
-            <a href="products.html" class="btn btn-primary">Explore</a>
+            <a href="home.html" class="btn btn-primary">Explore</a>
           </div>
         </div>
       </div>
