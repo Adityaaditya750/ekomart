@@ -1,3 +1,80 @@
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .product-section, .food-grid-section, .features-section, .promo-section, .top-trending-section, .latest-blog-posts {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .product-card, .food-card, .feature-box {
+    min-width: 180px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 992px) {
+  .product-section {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  .food-grid-section .row {
+    row-gap: 16px;
+  }
+  .nav-icons {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container, .container-fluid {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+  .product-section {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    padding: 16px 4px;
+  }
+  .product-card, .food-card, .feature-box {
+    min-width: 120px;
+    padding: 8px;
+  }
+  .promo-bar, .top-trending-section, .features-section, .latest-blog-posts, .footer {
+    font-size: 0.95rem;
+  }
+  .nav-icons {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .carousel-item img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-section {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 8px 2px;
+  }
+  .product-card, .food-card, .feature-box {
+    min-width: 100px;
+    padding: 4px;
+  }
+  .promo-bar, .top-trending-section, .features-section, .latest-blog-posts, .footer {
+    font-size: 0.9rem;
+  }
+  .nav-icons {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .carousel-item img {
+    height: 120px;
+  }
+}
+*
+{
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+}
 /* Fix for Bootstrap dropdown in flex nav bar */
 .nav .dropdown {
   position: relative;
