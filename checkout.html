@@ -7,64 +7,57 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body { background:#f8f9fa; font-family: 'Segoe UI',sans-serif; }
-    .checkout-card { border-radius:8px; background:#fff; padding:20px; }
-    .checkout-summary { border:1px solid #e6e6e6; padding:16px; border-radius:8px; background:#fff; }
-    .pay-btn { background:#68a131; color:#fff; font-weight:600; }
+  .checkout-card { border-radius:8px; background:#fff; padding:20px; }
+  .checkout-summary { border:1px solid #e6e6e6; padding:16px; border-radius:8px; background:#fff; }
+  .pay-btn { background:#68a131; color:#fff; font-weight:600; }
     .pay-btn:hover { background:#5b8e2e; }
   </style>
   
-</head>
-<body>
-  <div class="container py-5">
-    <h2 class="mb-4">Checkout</h2>
-
-    <div class="row g-4">
-      <div class="col-lg-7">
+  </head>
+  <body>
+    <div class="container py-5">
+  <h2 class="mb-4">Checkout</h2>
+  
+  <div class="row g-4">
         <div class="checkout-card">
-          <h5>Billing Details</h5>
+          <h5>Checkout</h5>
           <form id="checkoutForm" class="row g-3">
-            <div class="col-md-6">
-              <label class="form-label">Full name</label>
-              <input id="custName" class="form-control" required>
+            <div id="step-address">
+              <h6 class="mb-3">Billing Details</h6>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Full name</label>
+                <input id="custName" class="form-control" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Email</label>
+                <input id="custEmail" type="email" class="form-control" required>
+              </div>
+              <div class="col-12 mb-3">
+                <label class="form-label">Address</label>
+                <input id="custAddress" class="form-control" placeholder="Street, City, ZIP" required>
+              </div>
+              <div class="col-12">
+                <button id="nextToPayment" type="button" class="btn pay-btn w-100">Next: Payment</button>
+              </div>
             </div>
-            <div class="col-md-6">
-              <label class="form-label">Email</label>
-              <input id="custEmail" type="email" class="form-control" required>
-            </div>
-            <div class="col-12">
-              <label class="form-label">Address</label>
-              <input id="custAddress" class="form-control" placeholder="Street, City, ZIP" required>
-            </div>
-
-            <h6 class="mt-3">Payment (simulated)</h6>
-            <div class="col-md-6">
-              <label class="form-label">Card number</label>
-              <input id="cardNumber" class="form-control" placeholder="4111 1111 1111 1111" required>
-            </div>
-            <div class="col-md-3">
-              <label class="form-label">Expiry</label>
-              <input id="cardExpiry" class="form-control" placeholder="MM/YY" required>
-            </div>
-            <div class="col-md-3">
-              <label class="form-label">CVV</label>
-              <input id="cardCvv" class="form-control" placeholder="123" required>
-            </div>
-
-            <div class="col-12">
-              <button id="payNow" type="button" class="btn pay-btn">Pay Now</button>
-
-<script>
-document.getElementById("payNow").addEventListener("click", function () {
-    // Simulated payment success
-    window.location.href = "orderconformation.html";
-});
-</script>
-
+            <div id="step-payment" style="display:none;">
+              <h6 class="mb-3">Payment (simulated)</h6>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Card number</label>
+                <input id="cardNumber" class="form-control" placeholder="4111 1111 1111 1111" required>
+              <div class="col-md-3 mb-3">
+                <label class="form-label">Expiry</label>
+                <input id="cardExpiry" class="form-control" placeholder="MM/YY" required>
+              <div class="col-md-3 mb-3">
+                <label class="form-label">CVV</label>
+                <input id="cardCvv" class="form-control" placeholder="123" required>
+              <div class="col-12">
+                <button id="payNow" type="button" class="btn pay-btn w-100">Pay Now</button>
+              </div>
             </div>
           </form>
         </div>
       </div>
-
       <div class="col-lg-5">
         <div class="checkout-summary">
           <h6>Order Summary</h6>
@@ -88,7 +81,216 @@ document.getElementById("payNow").addEventListener("click", function () {
         </div>
       </div>
     </div>
+    <div id="message" class="mt-4"></div>
+  </div>
+  
+</script>
+<script>
+// Step-by-step logic for checkout
+document.getElementById('nextToPayment').addEventListener('click', function() {
+  // Validate address fields
+  const name = document.getElementById('custName').value.trim();
+  const phone = document.getElementById('custPhone').value.trim();
+  const address = document.getElementById('custAddress').value.trim();
+  if(!name || !phone || !address) {
+    alert('Please fill in all address details.');
+    return;
+  }
+  document.getElementById('step-address').style.display = 'none';
+  document.getElementById('step-payment').style.display = 'block';
+});
 
+// Dynamic payment form logic
+document.getElementById('paymentMethod').addEventListener('change', function() {
+  const method = this.value;
+  const area = document.getElementById('paymentFormArea');
+  let html = '';
+  if(method === 'phonepe') {
+    html = `<div class='mb-3'><label class='form-label'>PhonePe Number</label><input class='form-control' id='phonepeNumber' placeholder='Enter PhonePe number' required></div><button id='payNow' type='button' class='btn pay-btn w-100'>Pay Now</button>`;
+  } else if(method === 'paytm') {
+    html = `<div class='mb-3'><label class='form-label'>Paytm Number</label><input class='form-control' id='paytmNumber' placeholder='Enter Paytm number' required></div><button id='payNow' type='button' class='btn pay-btn w-100'>Pay Now</button>`;
+  } else if(method === 'card') {
+    html = `<div class='row'><div class='col-md-6 mb-3'><label class='form-label'>Card number</label><input id='cardNumber' class='form-control' placeholder='4111 1111 1111 1111' required></div><div class='col-md-3 mb-3'><label class='form-label'>Expiry</label><input id='cardExpiry' class='form-control' placeholder='MM/YY' required></div><div class='col-md-3 mb-3'><label class='form-label'>CVV</label><input id='cardCvv' class='form-control' placeholder='123' required></div></div><button id='payNow' type='button' class='btn pay-btn w-100'>Pay Now</button>`;
+  } else if(method === 'upi') {
+    html = `<div class='mb-3'><label class='form-label'>UPI ID</label><input class='form-control' id='upiId' placeholder='yourupi@bank' required></div><button id='payNow' type='button' class='btn pay-btn w-100'>Pay Now</button>`;
+  } else if(method === 'netbanking') {
+    html = `<div class='mb-3'><label class='form-label'>Bank Name</label><input class='form-control' id='bankName' placeholder='Enter bank name' required></div><div class='mb-3'><label class='form-label'>Account Number</label><input class='form-control' id='accountNumber' placeholder='Enter account number' required></div><button id='payNow' type='button' class='btn pay-btn w-100'>Pay Now</button>`;
+  }
+  area.innerHTML = html;
+});
+
+function getCart(){ return JSON.parse(localStorage.getItem("cart")) || []; }
+function saveOrders(orders){ localStorage.setItem("orders", JSON.stringify(orders)); }
+function getOrders(){ return JSON.parse(localStorage.getItem("orders")) || []; }
+function generateOrderID(){ return 'ORD' + Math.floor(100000 + Math.random()*900000); }
+
+function renderSummary(){
+  const items = getCart();
+  const orderItems = document.getElementById('orderItems');
+  orderItems.innerHTML = '';
+  let subtotal = 0;
+  if(items.length === 0){
+    orderItems.innerHTML = '<div class="text-muted">Your cart is empty.</div>';
+  } else {
+    items.forEach(it=>{
+      const line = document.createElement('div');
+      const price = (parseFloat(it.price)||0)*(it.qty||1);
+      subtotal += price;
+      line.innerHTML = `<div class="d-flex justify-content-between"><div>${it.name} x ${it.qty}</div><div>₹${price.toFixed(2)}</div></div>`;
+      orderItems.appendChild(line);
+    });
+  }
+  document.getElementById('sumSubtotal').innerText = subtotal.toFixed(2);
+  updateTotals();
+}
+
+function updateTotals(){
+  const subtotal = parseFloat(document.getElementById('sumSubtotal').innerText)||0;
+  const shipping = parseFloat(document.getElementById('shippingSelect').value)||0;
+  document.getElementById('sumTotal').innerText = (subtotal + shipping).toFixed(2);
+}
+
+document.getElementById('shippingSelect').addEventListener('change', updateTotals);
+renderSummary();
+
+document.getElementById('payNow').addEventListener('click', function(){
+  const items = getCart();
+  if(!items || items.length===0){
+    alert('Your cart is empty.');
+    return;
+  }
+  // Validate payment fields
+  const card = document.getElementById('cardNumber').value.trim();
+  const expiry = document.getElementById('cardExpiry').value.trim();
+  const cvv = document.getElementById('cardCvv').value.trim();
+  if(!card || !expiry || !cvv){ alert('Please fill payment details.'); return; }
+
+  // Get address info
+  const name = document.getElementById('custName').value.trim();
+  const email = document.getElementById('custEmail').value.trim();
+  const address = document.getElementById('custAddress').value.trim();
+  // Get payment mode (simulated as 'Card')
+  const paymentMode = 'Card';
+
+  // create order
+  const orderId = generateOrderID();
+  const subtotal = parseFloat(document.getElementById('sumSubtotal').innerText)||0;
+  const shipping = parseFloat(document.getElementById('shippingSelect').value)||0;
+  const total = subtotal + shipping;
+
+  const order = {
+    id: orderId,
+    createdAt: new Date().toISOString(),
+    status: 'Processing',
+    items: items,
+    customer: { name, email, address },
+    paymentMode,
+    subtotal, shipping, total
+  };
+
+  // save order into 'orders' array in localStorage
+  const orders = getOrders();
+  orders.push(order);
+  saveOrders(orders);
+
+  // clear cart
+  localStorage.removeItem('cart');
+
+  // show confirmation and redirect to order confirmation page
+  const messageDiv = document.getElementById('message');
+  messageDiv.innerHTML = `<div class="alert alert-success">Payment successful ✅. Order placed. Redirecting...</div>`;
+
+  setTimeout(() => {
+    window.location.href = `orderconformation.html?orderId=${orderId}`;
+  }, 900);
+});
+</script>
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Checkout - Ekomart</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background:#f8f9fa; font-family: 'Segoe UI',sans-serif; }
+    .checkout-card { border-radius:8px; background:#fff; padding:20px; }
+    .checkout-summary { border:1px solid #e6e6e6; padding:16px; border-radius:8px; background:#fff; }
+    .pay-btn { background:#68a131; color:#fff; font-weight:600; }
+    .pay-btn:hover { background:#5b8e2e; }
+  </style>
+  
+</head>
+<body>
+  <div class="container py-5">
+    <h2 class="mb-4">Checkout</h2>
+
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <div class="checkout-card">
+          <h5>Checkout</h5>
+          <form id="checkoutForm" class="row g-3">
+            <div id="step-address">
+              <h6 class="mb-3">Billing Details</h6>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Full name</label>
+                <input id="custName" class="form-control" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Phone Number</label>
+                <input id="custPhone" class="form-control" placeholder="Enter phone number" required>
+              </div>
+              <div class="col-12 mb-3">
+                <label class="form-label">Address</label>
+                <input id="custAddress" class="form-control" placeholder="Street, City, ZIP" required>
+              </div>
+              <div class="col-12">
+                <button id="nextToPayment" type="button" class="btn pay-btn w-100">Next: Payment</button>
+              </div>
+            </div>
+            <div id="step-payment" style="display:none;">
+              <h6 class="mb-3">Choose Payment Method</h6>
+              <div class="mb-3">
+                <select id="paymentMethod" class="form-select">
+                  <option value="">Select Payment Method</option>
+                  <option value="phonepe">PhonePe</option>
+                  <option value="paytm">Paytm</option>
+                  <option value="card">Card</option>
+                  <option value="upi">UPI</option>
+                  <option value="netbanking">Net Banking</option>
+                </select>
+              </div>
+              <div id="paymentFormArea"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="checkout-summary">
+          <h6>Order Summary</h6>
+          <div id="orderItems" class="mb-3"></div>
+          <div class="d-flex justify-content-between">
+            <div>Subtotal</div><div>₹<span id="sumSubtotal">0.00</span></div>
+          </div>
+          <div class="d-flex justify-content-between mt-2">
+            <div>Shipping</div>
+            <div>
+              <select id="shippingSelect" class="form-select form-select-sm w-auto d-inline-block">
+                <option value="0">Free</option>
+                <option value="50">Express (₹50)</option>
+              </select>
+            </div>
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between">
+            <strong>Total</strong><strong>₹<span id="sumTotal">0.00</span></strong>
+          </div>
+        </div>
+      </div>
+    </div>
     <div id="message" class="mt-4"></div>
   </div>
 

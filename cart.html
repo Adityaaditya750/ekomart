@@ -11,183 +11,79 @@
 </head>
 
 <body>
-  <!-- Promo Top Bar -->
-  <div class="bg-success text-white py-2 promo-bar">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center small">
-      <div class="d-flex align-items-center gap-2 mb-2 mb-md-0">
-        <i class="bi bi-truck fs-5 me-2"></i>
-        <span>FREE delivery & 40% Discount for next 3 orders! Place your 1st order in:</span>
-        <strong class="ms-1"><span id="promo-days">20</span></strong> Days
-        <strong><span id="promo-hours">23</span></strong> Hour
-        <strong><span id="promo-minutes">28</span></strong> Min
-        <strong><span id="promo-seconds">40</span></strong> Sec
-      </div>
-      <div class="d-flex align-items-center gap-2">
-        <i class="bi bi-telephone me-1"></i>
-        <span>Need help? Call Us:</span> <strong>+258 3268 21485</strong>
-      </div>
-    </div>
-  </div>
-  <!-- Secondary Header -->
-  <div class="bg-light border-bottom py-2">
-    <div class="container d-flex justify-content-between align-items-center flex-wrap small text-muted">
-      <div class="d-flex flex-wrap align-items-center gap-3">
-        <a href="#" class="text-muted text-decoration-none"><i class="bi bi-info-circle me-1"></i>About Us</a>
-        <a href="./logiin.html" class="text-muted text-decoration-none"><i class="bi bi-person me-1"></i>My Account</a>
-        <a href="#" class="text-muted text-decoration-none"><i class="bi bi-heart me-1"></i>Wishlist</a>
-        <span class="vr"></span>
-        <span><i class="bi bi-clock me-1"></i>We deliver everyday 7:00 - 22:00</span>
-      </div>
-      <div class="d-flex flex-wrap align-items-center gap-3">
-        <div class="dropdown">
-          <a class="dropdown-toggle text-muted text-decoration-none" href="#" role="button" data-bs-toggle="dropdown">
-            <i class="bi bi-translate me-1"></i>English
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">English</a></li>
-            <li><a class="dropdown-item" href="#">Hindi</a></li>
-          </ul>
-        </div>
-        <div class="dropdown">
-          <a class="dropdown-toggle text-muted text-decoration-none" href="#" role="button" data-bs-toggle="dropdown">
-            <i class="bi bi-currency-dollar me-1"></i>USD
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">USD</a></li>
-            <li><a class="dropdown-item" href="#">INR</a></li>
-          </ul>
-        </div>
-        <a href="#" class="text-muted text-decoration-none"><i class="bi bi-truck me-1"></i>Track Order</a>
-      </div>
-    </div>
-  </div>
-  <!-- Main Header -->
-  <div class="bg-white py-3 border-bottom sticky-top" style="z-index: 1020;" data-aos="fade-down" data-aos-delay="100">
-    <div class="container d-flex justify-content-between align-items-center flex-wrap">
-      <a href="#" class="d-flex align-items-center text-decoration-none me-4">
-        <img src="images/logo.png" alt="Logo" width="48" height="48" class="me-2">
-        <span class="fs-3 fw-bold text-dark">EKO</span><span class="fs-3 fw-bold text-success">MART</span>
-      </a>
-      <div class="d-flex flex-grow-1 mx-3" style="max-width: 600px; min-width: 260px;">
-        <div class="input-group shadow-sm rounded-3 overflow-hidden">
-          <input type="text" class="form-control border-0" placeholder="Search for products, categories or brands">
-          <button class="btn btn-success fw-bold px-4"><i class="bi bi-search me-1"></i>Search</button>
-        </div>
-      </div>
-      <div class="nav-icons d-flex align-items-center gap-2 ms-3">
-        <button class="btn d-flex align-items-center position-relative">
-          <i class="bi bi-person fs-5"></i>
-          <span class="d-none d-md-inline ms-2">Account</span>
-        </button>
-        <button class="btn d-flex align-items-center position-relative">
-          <i class="bi bi-bell fs-5"></i>
-        </button>
-        <button class="btn d-flex align-items-center position-relative">
-          <i class="bi bi-heart fs-5"></i>
-          <span class="d-none d-md-inline ms-2">Wishlist</span>
-          <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success wishlist-count">0</span>
-        </button>
-        <button class="btn d-flex align-items-center position-relative">
-          <i class="bi bi-cart fs-5"></i>
-          <a href="cart.html" class="btn btn-outline-light position-relative">
-            🛒
-            <span class="d-none d-md-inline ms-2">Cart</span>
-            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
-          </a>
-        </button>
-      </div>
-    </div>
-  </div>
-  <!-- Navigation Bar -->
-  <nav class="bg-light border-bottom" data-aos="fade-down" data-aos-delay="200">
-    <div class="container d-flex justify-content-between align-items-center flex-wrap py-2">
-      <!-- Left Navigation Links -->
-      <ul class="nav gap-1">
-        <li class="nav-item">
-          <a class="nav-link text-dark fw-semibold px-3" href="home.html">Home</a>
-        </li>
-        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Shop</a></li>
-        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Vendors</a></li>
-        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Pages</a></li>
-        <li class="nav-item position-relative">
-          <a class="nav-link text-dark fw-semibold px-3" href="#">Dashboard
-            <span class="position-absolute top-0 start-100 translate-middle badge bg-success rounded-pill"
-              style="font-size: 0.6rem;">New</span>
-          </a>
-        </li>
-        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Contact</a></li>
-      </ul>
-
-      <button class="btn btn-success btn-sale shadow-sm ml-auto">
-        🎉 30% OFF
-      </button>
-    </div>
-    </div>
-    </div>
-  </nav>
-
   <div class="container py-4">
-
-    <!-- Free Shipping Progress -->
-    <p>Add <span class="text-success fw-bold">$<span id="remaining-free-shipping">59.69</span></span> to cart and get
-      free shipping</p>
-    <div class="progress mb-4">
-      <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" id="shipping-progress"></div>
-    </div>
-
-    <!-- Cart Table -->
-    <div class="table-responsive">
-      <table class="table align-middle">
-        <thead class="table-light">
-          <tr>
-            <th></th>
-            <th>Products</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Subtotal</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="cart-items"></tbody>
-      </table>
-    </div>
-
-    <!-- Coupon & Clear Cart -->
-    <div class="d-flex justify-content-between align-items-center flex-wrap mt-3">
-      <div class="d-flex mb-2">
-        <input type="text" class="form-control me-2" placeholder="Coupon Code" id="coupon-code" />
-        <button class="btn btn-success" onclick="applyCoupon()">Apply Coupon</button>
-      </div>
-      <button class="btn btn-outline-danger" onclick="clearCart()">Clear Cart</button>
-    </div>
-
-    <!-- Cart Totals -->
-    <div class="row mt-4">
-      <div class="col-md-5 ms-auto d-flex flex-column align-items-center">
-        <div class="p-4 border bg-white rounded w-100">
-          <h5>Cart Totals</h5>
-          <hr>
-          <p>Subtotal: <strong>$<span id="cart-subtotal">0.00</span></strong></p>
-          <div class="mb-3">
-            <p class="mb-1">Shipping</p>
-            <div>
-              <label><input type="radio" name="shipping" value="0" checked> Free Shipping</label><br>
-              <label><input type="radio" name="shipping" value="5"> Flat Rate ($5)</label><br>
-              <label><input type="radio" name="shipping" value="0"> Local Pickup</label>
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <div class="card mb-4">
+          <div class="card-body">
+            <p class="mb-3">Add <span class="text-success fw-bold">$<span id="remaining-free-shipping">59.69</span></span> to cart and get free shipping</p>
+            <div class="progress mb-4" style="height: 6px;">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" id="shipping-progress"></div>
+            </div>
+            <div class="table-responsive">
+              <table class="table align-middle mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <th></th>
+                    <th>Products</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>SubTotal</th>
+                  </tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+              </table>
             </div>
           </div>
-          <p>Total: <strong>$<span id="cart-total">0.00</span></strong></p>
-          <!-- go to checkout (where payment is simulated and order placed) -->
-          <div class="d-flex justify-content-center mt-3">
-            <button class="btn checkout-btn px-4 py-2" style="min-width:200px;" onclick="window.location.href='checkout.html'">
-              Proceed To Checkout
-            </button>
+        </div>
+        <div class="card mb-4">
+          <div class="card-body d-flex flex-wrap justify-content-between align-items-center">
+            <div class="d-flex flex-grow-1 me-3 mb-2 mb-md-0">
+              <input type="text" class="form-control me-2" placeholder="Coupon Code" id="coupon-code" />
+              <button class="btn btn-success px-4" onclick="applyCoupon()">Apply Coupon</button>
+            </div>
+            <button class="btn btn-success px-4" onclick="clearCart()">Clear All</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card border-success mb-4">
+          <div class="card-body">
+            <h5 class="fw-bold mb-3">Cart Totals</h5>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span>Subtotal</span>
+              <span class="fw-bold" id="cart-subtotal">$0.00</span>
+            </div>
+            <hr>
+            <div class="mb-3">
+              <p class="mb-1 fw-bold">Shipping</p>
+              <div class="mb-2">
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="radio" name="shipping" value="0" id="freeShipping" checked>
+                  <label class="form-check-label" for="freeShipping">Free Shipping</label>
+                </div>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="radio" name="shipping" value="5" id="flatRate">
+                  <label class="form-check-label" for="flatRate">Flat Rate</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="shipping" value="0" id="localPickup">
+                  <label class="form-check-label" for="localPickup">Local Pickup</label>
+                </div>
+              </div>
+              <small class="text-muted">Shipping options will be updated during checkout</small>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="fw-bold">Total</span>
+              <span class="fw-bold" id="cart-total">$0.00</span>
+            </div>
+            <button class="btn btn-success w-100 py-2 fw-bold" style="font-size: 1.1rem;" onclick="window.location.href='checkout.html'">Proceed To Checkout</button>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <!-- ...existing code... -->
   <footer class="footer bg-light pt-5" data-aos="fade-up" data-aos-delay="1400">
     <div class="container">
       <div class="row">
