@@ -13,8 +13,6 @@
  
 
   <link rel="stylesheet" href="style.css">
-  <!-- Add AOS CSS in the head section -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 </head>
 <body>
@@ -71,7 +69,7 @@
     </div>
   </div>
   <!-- Main Header -->
-  <div class="bg-white py-3 border-bottom sticky-top" style="z-index: 1020;" data-aos="fade-down" data-aos-delay="100">
+  <div class="bg-white py-3 border-bottom sticky-top" style="z-index: 1020;">
     <div class="container d-flex justify-content-between align-items-center flex-wrap">
       <!-- Logo -->
       <a href="#" class="d-flex align-items-center text-decoration-none me-4">
@@ -110,18 +108,10 @@
           <span class="d-none d-md-inline ms-2">Wishlist</span>
           <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success wishlist-count">0</span>
         </button>
-        <button class="btn d-flex align-items-center position-relative">
+        <button class="btn d-flex align-items-center position-relative" onclick="window.location.href='cart.html'">
           <i class="bi bi-cart fs-5"></i>
-          <a href="cart.html" class="btn btn-outline-light position-relative">
-            🛒
-            <span class="d-none d-md-inline ms-2">Cart</span>
-            <span id="cart-count"
-              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-              0
-            </span>
-          </a>
-
-          <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success">0</span>
+          <span class="d-none d-md-inline ms-2">Cart</span>
+          <span id="cart-count" class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-danger">0</span>
         </button>
       </div>
     </div>
@@ -131,7 +121,7 @@
   </div>
   </div>
   <!-- Navigation Bar -->
-  <nav class="bg-light border-bottom" data-aos="fade-down" data-aos-delay="200">
+  <nav class="bg-light border-bottom">
     <div class="container d-flex justify-content-between align-items-center flex-wrap py-2">
       <!-- Left Navigation Links -->
       <ul class="nav gap-1">
@@ -159,7 +149,7 @@
   </nav>
   <!-- Full-Width Auto Sliding Banner -->
   <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000"
-    data-aos="zoom-in" data-aos-delay="300">
+  >
     <div class="carousel-inner">
       <!-- Slide 1 -->
       <div class="carousel-item active">
@@ -204,7 +194,7 @@
 
 
   <!-- Category Bar -->
-  <section class="py-4 bg-light border-bottom" data-aos="fade-right" data-aos-delay="400">
+  <section class="py-4 bg-light border-bottom">
     <div class="container-fluid px-0">
       <div class="d-flex flex-nowrap overflow-auto category-track gap-3 py-2 px-2">
         <div class="category-item">
@@ -257,11 +247,11 @@
 
   <!-- feature box section -->
 
-  <section class="features-section py-5" data-aos="fade-up" data-aos-delay="500">
+  <section class="features-section py-5">
     <div class="container-fluid px-0" style="background: #f8fff8;">
       <div class="d-flex flex-row flex-nowrap justify-content-center align-items-stretch w-100 gap-4 flex-wrap">
         <!-- Box 1: Dollar Icon -->
-        <div class="feature-box d-flex flex-row align-items-center gap-3" data-aos="fade-up" data-aos-delay="0">
+  <div class="feature-box d-flex flex-row align-items-center gap-3">
           <div class="feature-icon d-flex align-items-center justify-content-center" style="min-width:56px;">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#4CAF50" stroke-width="2" viewBox="0 0 48 48">
               <circle cx="24" cy="24" r="20" />
@@ -276,7 +266,7 @@
         </div>
 
         <!-- Box 2: Percent Icon -->
-        <div class="feature-box d-flex flex-row align-items-center gap-3" data-aos="fade-up" data-aos-delay="100">
+  <div class="feature-box d-flex flex-row align-items-center gap-3">
           <div class="feature-icon d-flex align-items-center justify-content-center" style="min-width:56px;">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#4CAF50" stroke-width="2" viewBox="0 0 48 48">
               <circle cx="24" cy="24" r="20" />
@@ -292,7 +282,7 @@
         </div>
 
         <!-- Box 3: Analytics Icon -->
-        <div class="feature-box d-flex flex-row align-items-center gap-3" data-aos="fade-up" data-aos-delay="200">
+  <div class="feature-box d-flex flex-row align-items-center gap-3">
           <div class="feature-icon d-flex align-items-center justify-content-center" style="min-width:56px;">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#4CAF50" stroke-width="2" viewBox="0 0 48 48">
               <circle cx="24" cy="24" r="20" />
@@ -308,7 +298,7 @@
         </div>
 
         <!-- Box 4: 24/7 Support Icon -->
-        <div class="feature-box d-flex flex-row align-items-center gap-3" data-aos="fade-up" data-aos-delay="300">
+  <div class="feature-box d-flex flex-row align-items-center gap-3">
           <div class="feature-icon d-flex align-items-center justify-content-center" style="min-width:56px;">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#4CAF50" stroke-width="2" viewBox="0 0 48 48">
               <circle cx="24" cy="24" r="20" />

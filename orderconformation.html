@@ -31,16 +31,22 @@
     } else {
       let itemsHtml = order.items.map(it => `<div class="d-flex justify-content-between"><div>${it.name} x ${it.qty}</div><div>₹${((parseFloat(it.price) || 0) * it.qty).toFixed(2)}</div></div>`).join('');
       content.innerHTML = `
-        <h4 class="mb-3">Thank you — your order is placed!</h4>
-        <p><strong>Order ID:</strong> ${order.id}</p>
-        <p><strong>Status:</strong> ${order.status}</p>
-        <div class="mb-3"><strong>Items</strong>${itemsHtml}</div>
-        <div class="mb-3 d-flex justify-content-between"><div>Subtotal</div><div>₹${order.subtotal.toFixed(2)}</div></div>
-        <div class="d-flex justify-content-between"><div>Shipping</div><div>₹${order.shipping.toFixed(2)}</div></div>
-        <hr>
-        <div class="d-flex justify-content-between mb-3"><strong>Total</strong><strong>₹${order.total.toFixed(2)}</strong></div>
-        <a href="track-order.html?orderId=${order.id}" class="btn btn-primary">Track This Order</a>
-        <a href="index.html" class="btn btn-outline-secondary ms-2">Continue Shopping</a>
+        <div class="card shadow-sm p-4 mb-4" style="max-width:600px;margin:auto;">
+          <h4 class="mb-3 text-success">Thank you — your order is placed!</h4>
+          <p><strong>Order ID:</strong> <span class="text-primary">${order.id}</span></p>
+          <p><strong>Status:</strong> <span class="badge bg-info">${order.status}</span></p>
+          <div class="mb-3"><strong>Items</strong>${itemsHtml}</div>
+          <div class="mb-2"><strong>Name:</strong> ${order.customer?.name || '-'}</div>
+          <div class="mb-2"><strong>Address:</strong> ${order.customer?.address || '-'}</div>
+          <div class="mb-2"><strong>Email:</strong> ${order.customer?.email || '-'}</div>
+          <div class="mb-2"><strong>Payment Mode:</strong> <span class="badge bg-success">${order.paymentMode || 'Card'}</span></div>
+          <div class="mb-3 d-flex justify-content-between"><div>Subtotal</div><div>₹${order.subtotal.toFixed(2)}</div></div>
+          <div class="d-flex justify-content-between"><div>Shipping</div><div>₹${order.shipping.toFixed(2)}</div></div>
+          <hr>
+          <div class="d-flex justify-content-between mb-3"><strong>Total</strong><strong>₹${order.total.toFixed(2)}</strong></div>
+          <a href="trackorder.html?orderId=${order.id}" class="btn btn-success w-100 mb-2">Track This Order</a>
+          <a href="index.html" class="btn btn-outline-secondary w-100">Continue Shopping</a>
+        </div>
       `;
     }
   }
