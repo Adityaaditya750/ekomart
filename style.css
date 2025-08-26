@@ -1,3 +1,11 @@
+/* TEMP: Color all main divs for visual distinction */
+/* body > div:nth-of-type(1) { background: #ffe5e5 !important; }
+body > div:nth-of-type(2) { background: #e5f7ff !important; }
+body > div:nth-of-type(3) { background: #e5ffe5 !important; } */
+body > div:nth-of-type(4) { background: #fffbe5 !important; }
+body > div:nth-of-type(5) { background: #f3e5ff !important; }
+body > div:nth-of-type(6) { background: #e5e9ff !important; }
+body > div:nth-of-type(7) { background: #fff0e5 !important; }
 *
 {
   margin: 0px;
@@ -26,7 +34,7 @@
   align-items: center;
   gap: 18px;
   background: #fff;
-  border: 1.5px solid #e5e7eb;
+  border: 1.5px solid #dc3545;
   border-radius: 14px;
   padding: 24px 32px;
   min-height: 110px;
@@ -189,6 +197,7 @@ footer h5 {
   flex: 0 0 auto;
   text-align: center;
   background: #fff;
+  border: 1.5px solid #dc3545;
   border-radius: 8px;
   padding: 12px 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -201,7 +210,7 @@ footer h5 {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 6px;
-  border: 2px solid #ddd;
+  border: 2px solid #dc3545;
 }
 
 .category-item h6 {
@@ -312,38 +321,51 @@ footer h5 {
 /* Updated Product Card */
 .product-card {
   background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  transition: box-shadow 0.2s, transform 0.2s;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 16px;
+  padding: 18px 14px 16px 14px;
+  min-height: 340px;
+  position: relative;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.13);
 }
 
 .product-img {
   position: relative;
   text-align: center;
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 10px 0 10px 0;
 }
 
 .product-img img {
   width: 100%;
-  height: auto;
+  height: 140px;
+  object-fit: contain;
   border-radius: 8px;
 }
 
 .discount-badge {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #f9b233;
-  color: #000;
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(90deg, #ff5858 60%, #f9b233 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 5px 14px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(249,178,51,0.13);
+  letter-spacing: 0.01em;
 .features-section .d-flex {
   justify-content: space-between !important;
   flex-wrap: nowrap !important;
@@ -575,20 +597,25 @@ footer h5 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid #e0e0e0;
-  transition: transform 0.2s ease;
+  border: 1.5px solid #66a80f;
+  box-shadow: 0 4px 16px rgba(76,175,80,0.07);
+  transition: box-shadow 0.2s, transform 0.2s;
   position: relative;
-  border-radius: 8px;
+  border-radius: 14px;
+  background: #fff;
+  padding: 18px 10px 14px 10px;
 }
 
 .food-grid-section .food-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px 0 rgba(76,175,80,0.13);
 }
 
 .food-grid-section .food-card img {
   max-width: 100%;
-  height: 100px;
+  height: 110px;
   object-fit: contain;
+  border-radius: 8px;
 }
 
 .food-grid-section .food-card h6 {
@@ -603,17 +630,24 @@ footer h5 {
 
 .food-grid-section .discount-badge {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #dc3545;
+  top: 8px;
+  left: 8px;
+  background: linear-gradient(90deg, #ff5858 60%, #f9b233 100%);
   color: #fff;
-  padding: 2px 6px;
-  font-size: 0.75rem;
-  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 6px 16px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(249,178,51,0.13);
+  letter-spacing: 0.01em;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .food-grid-section .btn {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  font-weight: 500;
 }
 
 .food-grid-section input[type="number"] {
@@ -929,3 +963,21 @@ img:hover {
   width: 120px; /* Adjust size as needed */
   text-align: center;
 }
+.category-btn {
+      border-radius: 50px;
+      font-weight: 600;
+      padding: 8px 20px;
+      transition: 0.3s;
+    }
+    .category-btn.active {
+      background-color: #64a338; /* green */
+      color: #fff;
+    }
+    .category-btn:not(.active) {
+      background-color: #fff;
+      color: #2e3b26;
+      border: 1px solid #eee;
+    }
+    .category-btn:not(.active):hover {
+      background-color: #f2f2f2;
+    }
