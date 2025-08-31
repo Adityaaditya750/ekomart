@@ -69,57 +69,57 @@
     </div>
   </div>
   <!-- Main Header -->
-  <div class="bg-white py-3 border-bottom sticky-top" style="z-index: 1020;">
-    <div class="container d-flex justify-content-between align-items-center flex-wrap">
-      <!-- Logo -->
-      <a href="#" class="d-flex align-items-center text-decoration-none me-4">
-        <img src="images/logo.png" alt="Logo" width="48" height="48" class="me-2">
-        <span class="fs-3 fw-bold text-dark">EKO</span><span class="fs-3 fw-bold text-success">MART</span>
-      </a>
-      <div class="dropdown">
-  <button class="btn btn-light fw-bold text-dark border-end px-3 dropdown-toggle" 
-          type="button" 
-          data-bs-toggle="dropdown" 
+<div class="bg-white py-3 border-bottom sticky-top" style="z-index: 1020;">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap">
+    <!-- Logo -->
+    <a href="#" class="d-flex align-items-center text-decoration-none me-4">
+      <img src="https://t3.ftcdn.net/jpg/02/47/48/00/360_F_247480017_ST4hotATsrcErAja0VzdUsrrVBMIcE4u.jpg" alt="Logo" width="48" height="48" class="me-2">
+      <span class="fs-3 fw-bold eko-blue">EKO</span><span class="fs-3 fw-bold ekomart-orange">MART</span>
+    </a>
+    <!-- Categories + Search all in one div -->
+    <div class="d-flex align-items-center flex-grow-1" style="max-width: 700px;">
+      <div class="input-group">
+        <button class="btn btn-light fw-bold text-dark border-end dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
           aria-expanded="false">
-    <i class="bi bi-list"></i> Categories
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Fruits & Vegetables</a></li>
-    <li><a class="dropdown-item" href="#">Dairy</a></li>
-    <li><a class="dropdown-item" href="#">Bakery</a></li>
-    <li><a class="dropdown-item" href="#">Meat</a></li>
-    <li><a class="dropdown-item" href="#">Snacks</a></li>
-    <li><a class="dropdown-item" href="#">Beverages</a></li>
-  </ul>
-</div>
-
-      <!-- Right Icons -->
-      <div class="nav-icons d-flex align-items-center gap-2 ms-3">
-        <button class="btn d-flex align-items-center position-relative">
-          <i class="bi bi-person fs-5"></i>
-          <span class="d-none d-md-inline ms-2">Account</span>
+          <i class="bi bi-list"></i> Categories
         </button>
-        <button class="btn d-flex align-items-center position-relative">
-          <i class="bi bi-bell fs-5"></i>
-          <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success">0</span>
-        </button>
-        <button class="btn d-flex align-items-center position-relative">
-          <i class="bi bi-heart fs-5"></i>
-          <span class="d-none d-md-inline ms-2">Wishlist</span>
-          <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success wishlist-count">0</span>
-        </button>
-        <button class="btn d-flex align-items-center position-relative" onclick="window.location.href='cart.html'">
-          <i class="bi bi-cart fs-5"></i>
-          <span class="d-none d-md-inline ms-2">Cart</span>
-          <span id="cart-count" class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-danger">0</span>
-        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Fruits & Vegetables</a></li>
+          <li><a class="dropdown-item" href="#">Dairy</a></li>
+          <li><a class="dropdown-item" href="#">Bakery</a></li>
+          <li><a class="dropdown-item" href="#">Meat</a></li>
+          <li><a class="dropdown-item" href="#">Snacks</a></li>
+          <li><a class="dropdown-item" href="#">Beverages</a></li>
+        </ul>
+        <input type="text" class="form-control" placeholder="Search for products, categories or brands">
+        <button class="btn btn-success fw-bold px-4" type="button"><i class="bi bi-search me-1"></i>Search</button>
       </div>
     </div>
+    <!-- Right Icons (keep as is) -->
+    <div class="nav-icons d-flex align-items-center gap-2 ms-3">
+      <button class="btn d-flex align-items-center position-relative">
+        <i class="bi bi-person fs-5"></i>
+        <span class="d-none d-md-inline ms-2">Account</span>
+      </button>
+      <button class="btn d-flex align-items-center position-relative">
+        <i class="bi bi-bell fs-5"></i>
+        <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success">0</span>
+      </button>
+      <button class="btn d-flex align-items-center position-relative">
+        <i class="bi bi-heart fs-5"></i>
+        <span class="d-none d-md-inline ms-2">Wishlist</span>
+        <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success wishlist-count">0</span>
+      </button>
+      <button class="btn d-flex align-items-center position-relative" onclick="window.location.href='cart.html'">
+        <i class="bi bi-cart fs-5"></i>
+        <span class="d-none d-md-inline ms-2">Cart</span>
+        <span id="cart-count" class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-danger">0</span>
+      </button>
+    </div>
   </div>
-
-
-  </div>
-  </div>
+</div>
   <!-- Navigation Bar -->
   <nav class="bg-light border-bottom">
     <div class="container d-flex justify-content-between align-items-center flex-wrap py-2">

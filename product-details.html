@@ -6,7 +6,10 @@
   <title>Product Details</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
+<body class="bg-light">
   <div class="bg-success text-white py-2 promo-bar">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center small">
       <div class="d-flex align-items-center gap-2 mb-2 mb-md-0">
@@ -59,67 +62,59 @@
     </div>
   </div>
   <!-- Main Header -->
-  <div class="bg-white py-3 border-bottom sticky-top" style="z-index: 1020;" data-aos="fade-down" data-aos-delay="100">
-    <div class="container d-flex justify-content-between align-items-center flex-wrap">
-      <!-- Logo -->
-      <a href="#" class="d-flex align-items-center text-decoration-none me-4">
-        <img src="images/logo.png" alt="Logo" width="48" height="48" class="me-2">
-        <span class="fs-3 fw-bold text-dark">EKO</span><span class="fs-3 fw-bold text-success">MART</span>
-      </a>
-      <div class="dropdown">
-  <button class="btn btn-light fw-bold text-dark border-end px-3 dropdown-toggle" 
-          type="button" 
-          data-bs-toggle="dropdown" 
+<div class="bg-white py-3 border-bottom sticky-top" style="z-index: 1020;">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap">
+    <!-- Logo -->
+    <a href="#" class="d-flex align-items-center text-decoration-none me-4">
+      <img src="https://t3.ftcdn.net/jpg/02/47/48/00/360_F_247480017_ST4hotATsrcErAja0VzdUsrrVBMIcE4u.jpg" alt="Logo" width="48" height="48" class="me-2">
+      <span class="fs-3 fw-bold eko-blue">EKO</span><span class="fs-3 fw-bold ekomart-orange">MART</span>
+    </a>
+    <!-- Categories + Search all in one div -->
+    <div class="d-flex align-items-center flex-grow-1" style="max-width: 700px;">
+      <div class="input-group">
+        <button class="btn btn-light fw-bold text-dark border-end dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
           aria-expanded="false">
-    <i class="bi bi-list"></i> Categories
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Fruits & Vegetables</a></li>
-    <li><a class="dropdown-item" href="#">Dairy</a></li>
-    <li><a class="dropdown-item" href="#">Bakery</a></li>
-    <li><a class="dropdown-item" href="#">Meat</a></li>
-    <li><a class="dropdown-item" href="#">Snacks</a></li>
-    <li><a class="dropdown-item" href="#">Beverages</a></li>
-  </ul>
-</div>
-
-      <!-- Right Icons -->
-      <div class="nav-icons d-flex align-items-center gap-2 ms-3">
-        <button class="btn d-flex align-items-center position-relative">
-          <i class="bi bi-person fs-5"></i>
-          <span class="d-none d-md-inline ms-2">Account</span>
+          <i class="bi bi-list"></i> Categories
         </button>
-        <button class="btn d-flex align-items-center position-relative">
-          <i class="bi bi-bell fs-5"></i>
-          <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success">0</span>
-        </button>
-        <button class="btn d-flex align-items-center position-relative">
-          <i class="bi bi-heart fs-5"></i>
-          <span class="d-none d-md-inline ms-2">Wishlist</span>
-          <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success wishlist-count">0</span>
-        </button>
-        <button class="btn d-flex align-items-center position-relative">
-          <i class="bi bi-cart fs-5"></i>
-          <a href="cart.html" class="btn btn-outline-light position-relative">
-            🛒
-            <span class="d-none d-md-inline ms-2">Cart</span>
-            <span id="cart-count"
-              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-              0
-            </span>
-          </a>
-
-          <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success">0</span>
-        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Fruits & Vegetables</a></li>
+          <li><a class="dropdown-item" href="#">Dairy</a></li>
+          <li><a class="dropdown-item" href="#">Bakery</a></li>
+          <li><a class="dropdown-item" href="#">Meat</a></li>
+          <li><a class="dropdown-item" href="#">Snacks</a></li>
+          <li><a class="dropdown-item" href="#">Beverages</a></li>
+        </ul>
+        <input type="text" class="form-control" placeholder="Search for products, categories or brands">
+        <button class="btn btn-success fw-bold px-4" type="button"><i class="bi bi-search me-1"></i>Search</button>
       </div>
     </div>
+    <!-- Right Icons (keep as is) -->
+    <div class="nav-icons d-flex align-items-center gap-2 ms-3">
+      <button class="btn d-flex align-items-center position-relative">
+        <i class="bi bi-person fs-5"></i>
+        <span class="d-none d-md-inline ms-2">Account</span>
+      </button>
+      <button class="btn d-flex align-items-center position-relative">
+        <i class="bi bi-bell fs-5"></i>
+        <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success">0</span>
+      </button>
+      <button class="btn d-flex align-items-center position-relative">
+        <i class="bi bi-heart fs-5"></i>
+        <span class="d-none d-md-inline ms-2">Wishlist</span>
+        <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success wishlist-count">0</span>
+      </button>
+      <button class="btn d-flex align-items-center position-relative" onclick="window.location.href='cart.html'">
+        <i class="bi bi-cart fs-5"></i>
+        <span class="d-none d-md-inline ms-2">Cart</span>
+        <span id="cart-count" class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-danger">0</span>
+      </button>
+    </div>
   </div>
-
-
-  </div>
-  </div>
+</div>
   <!-- Navigation Bar -->
-  <nav class="bg-light border-bottom" data-aos="fade-down" data-aos-delay="200">
+  <nav class="bg-light border-bottom">
     <div class="container d-flex justify-content-between align-items-center flex-wrap py-2">
       <!-- Left Navigation Links -->
       <ul class="nav gap-1">
@@ -145,110 +140,183 @@
       </div>
     </div>
   </nav>
-<body class="bg-light">
+  <!-- ...existing header/nav code... -->
+
   <div class="container py-5">
-    <a href="index.html" class="btn btn-outline-secondary mb-4">&larr; Back to Home</a>
-    <div class="row">
-      <div class="col-md-5">
-  <img id="product-image" src="./img/orange.jpg" alt="Fresh Orange from Farm" class="img-fluid rounded shadow">
+  <a href="index.html" class="btn btn-outline-secondary mb-4">&larr; Back to Home</a>
+  <div class="row g-4">
+    <!-- Left: Image Gallery -->
+    <div class="col-lg-5">
+      <div class="d-flex flex-row flex-lg-column align-items-start gap-3 position-relative" style="height:100%;">
+        <div id="gallery-thumbs" class="d-none d-lg-flex flex-column gap-2 me-2" style="max-height: 420px; overflow-y: auto;"></div>
+        <img id="product-image" src="./img/orange.jpg" alt="Fresh Orange from Farm" class="img-fluid rounded shadow" style="max-height:420px; object-fit:contain;">
+        <!-- Add to Cart and Buy Now buttons below the image, left-aligned -->
+        <div class="w-100 mt-3 text-start">
+          <button id="add-to-cart-btn" class="btn btn-success btn-lg me-2"><i class="bi bi-cart"></i> ADD TO CART</button>
+          <button id="buy-now-btn" class="btn btn-secondary btn-lg">BUY NOW</button>
+        </div>
       </div>
-      <div class="col-md-7">
-        <h2 id="product-title" class="fw-bold mb-3">Fresh Orange from Farm</h2>
-        <span id="product-discount" class="discount-badge mb-2">15% Off</span>
-        <p id="product-pack" class="text-muted">1lt Pack</p>
-        <div class="mb-3">
-          <span id="product-price" class="fs-4 fw-bold text-success">$65.00</span>
-          <span id="product-old-price" class="text-muted text-decoration-line-through ms-2">$58.00</span>
-        </div>
-        <p id="product-desc">Enjoy the freshest oranges directly from the farm. Packed with vitamins and flavor, perfect for your daily juice or snack.</p>
-        <div class="d-flex align-items-center mb-3">
-          <label class="me-2">Quantity:</label>
-          <input type="number" value="1" min="1" class="form-control w-auto d-inline-block me-2">
-          <button id="add-to-cart-btn" class="btn btn-success"><i class="bi bi-cart"></i> Add to Cart</button>
-        </div>
-        <a href="contact.html" class="btn btn-outline-primary">Contact Seller</a>
+    </div>
+    <!-- Right: Product Info -->
+    <div class="col-lg-7">
+      <h2 id="product-title" class="fw-bold mb-2">Fresh Orange from Farm</h2>
+      <div class="d-flex align-items-center mb-2">
+        <span class="badge bg-success me-2"><i class="bi bi-star-fill"></i> 4.3</span>
+        <span class="text-muted small">4,721 Ratings & 331 Reviews</span>
+        <span class="ms-2 text-primary fw-bold"><i class="bi bi-patch-check-fill"></i> Assured</span>
+      </div>
+      <div class="d-flex align-items-end mb-2">
+        <span id="product-price" class="fs-2 fw-bold text-success">$65.00</span>
+        <span id="product-old-price" class="text-muted text-decoration-line-through ms-3 fs-5">$58.00</span>
+        <span id="product-discount" class="badge bg-warning text-dark ms-3">15% Off</span>
+        <span class="ms-3 text-muted small">@560/100g</span>
+      </div>
+      <div class="mb-1 text-muted" id="product-pack">1lt Pack</div>
+      <div class="mb-3">
+        <div class="mb-1 fw-bold">Available offers</div>
+        <ul class="list-unstyled mb-0">
+          <li><span class="badge bg-success-subtle text-success"><i class="bi bi-tag"></i> Combo Offer</span> Buy 2 items save ₹20; Buy 3 or more save ₹40 <a href="#" class="text-primary small">See all products T&C</a></li>
+          <li><span class="badge bg-success-subtle text-success"><i class="bi bi-bank"></i> Bank Offer</span> 5% cashback on Flipkart Axis Bank Credit Card upto ₹4,000 per statement quarter <a href="#" class="text-primary small">T&C</a></li>
+          <li><span class="badge bg-success-subtle text-success"><i class="bi bi-bank"></i> Bank Offer</span> 5% cashback on Axis Bank Flipkart Debit Card up to ₹750 <a href="#" class="text-primary small">T&C</a></li>
+          <li><span class="badge bg-success-subtle text-success"><i class="bi bi-bank"></i> Bank Offer</span> 5% cashback on Flipkart SBI Credit Card up to ₹4,000 per calendar quarter <a href="#" class="text-primary small">T&C</a></li>
+          <li><a href="#" class="text-primary small">View 3 more offers</a></li>
+        </ul>
+      </div>
+      <div class="mb-3">
+        <label class="fw-bold me-2">Delivery</label>
+        <input type="text" class="form-control d-inline-block w-auto me-2" placeholder="Enter Delivery Pincode" style="max-width:160px;">
+        <button class="btn btn-dark btn-sm">Check</button>
+        <div class="text-danger mt-1 small">Currently out of stock in this area.</div>
+      </div>
+      <div class="mb-3" id="quantity-section">
+        <label class="fw-bold me-2">Quantity</label>
+        <!-- Quantity buttons will be injected here if product has multiple packs -->
+      </div>
+      <div class="mb-3">
+        <div class="fw-bold">Highlights</div>
+        <ul class="mb-0">
+          <li>Container Type: Glass Bottle</li>
+          <li>100% Pure Coffee</li>
+          <li>Exquisite Blend of Coffee</li>
+          <li>Each Granule is Freeze-Dried</li>
+        </ul>
+      </div>
+      <p id="product-desc" class="text-muted">Enjoy the freshest oranges directly from the farm. Packed with vitamins and flavor, perfect for your daily juice or snack.</p>
+    </div>
+  </div>
+</div>
+  <!-- Specifications Section -->
+  <div class="container">
+    <div class="spec-section">
+      <h4 class="spec-title">Specifications</h4>
+      <!-- In The Box -->
+      <h6 class="spec-subtitle">In The Box</h6>
+      <p>1 DSLR Camera, Body Cap, Battery Charger, Battery Pack with Protective Cover, Camera Strap, Lens Kit</p>
+      <!-- General -->
+      <h6 class="spec-subtitle">General</h6>
+      <div class="spec-item">
+        <span class="spec-label">Brand</span>
+        <span class="spec-value">Canon</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-label">Model Number</span>
+        <span class="spec-value">R100</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-label">Model Name</span>
+        <span class="spec-value">EOS</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-label">SLR Variant</span>
+        <span class="spec-value">RF-S 18-45mm f/4.5-6.3 IS STM</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-label">Brand Color</span>
+        <span class="spec-value">Black</span>
+      </div>
+      <!-- Read More -->
+      <div class="mt-3">
+        <a href="#" class="read-more">Read More</a>
       </div>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Product data for 6 products
+    // Product data for 6 products (add more images/packs as needed)
     const products = [
       {
         id: 1,
-        image: './img/orange.jpg',
+        images: ['./img/orange.jpg'],
         title: 'Fresh Orange from Farm',
         discount: '15% Off',
-        pack: '1lt Pack',
-        price: '$65.00',
-        oldPrice: '$58.00',
+        packs: [
+          { label: '1lt Pack', price: '$65.00', oldPrice: '$58.00' }
+        ],
         desc: 'Enjoy the freshest oranges directly from the farm. Packed with vitamins and flavor, perfect for your daily juice or snack.',
         cartName: 'orrange',
         cartPrice: 65
       },
       {
         id: 2,
-        image: './img/Apple1.jpg',
+        images: ['./img/Apple1.jpg'],
         title: 'Fresh Red Apples from Farm',
         discount: '15% Off',
-        pack: '1kg Pack',
-        price: '$49.00',
-        oldPrice: '$58.00',
+        packs: [
+          { label: '1kg Pack', price: '$49.00', oldPrice: '$58.00' }
+        ],
         desc: 'Crisp, juicy red apples picked at peak ripeness. Perfect for snacking or baking.',
         cartName: 'Red apple',
         cartPrice: 49
       },
       {
         id: 3,
-        image: './img/banana1.jpg',
+        images: ['./img/banana1.jpg'],
         title: 'Organic Bananas - Healthy Choice',
         discount: '10% Off',
-        pack: '6 pcs Pack',
-        price: '$29.00',
-        oldPrice: '$32.00',
+        packs: [
+          { label: '6 pcs Pack', price: '$29.00', oldPrice: '$32.00' }
+        ],
         desc: 'Naturally sweet and rich in potassium. Great for breakfast or smoothies.',
         cartName: 'banana',
         cartPrice: 29
       },
       {
         id: 4,
-        image: './img/grapes.jpg',
+        images: ['./img/grapes.jpg'],
         title: 'Sweet Black Grapes - Fresh',
         discount: '30% Off',
-        pack: '500g Pack',
-        price: '$39.00',
-        oldPrice: '$56.00',
+        packs: [
+          { label: '500g Pack', price: '$39.00', oldPrice: '$56.00' }
+        ],
         desc: 'Delicious, seedless black grapes. Perfect for a healthy snack.',
         cartName: 'Grapes',
         cartPrice: 39
       },
       {
         id: 5,
-        image: './img/onion.jpg',
+        images: ['./img/onion.jpg'],
         title: 'Organic Onions - Red Quality',
         discount: '20% Off',
-        pack: '1kg Pack',
-        price: '$24.00',
-        oldPrice: '$30.00',
+        packs: [
+          { label: '1kg Pack', price: '$24.00', oldPrice: '$30.00' }
+        ],
         desc: 'Fresh, organic red onions. Essential for every kitchen.',
         cartName: 'Onion',
         cartPrice: 24
       },
       {
         id: 6,
-        image: './img/potato1.jpg',
+        images: ['./img/potato1.jpg'],
         title: 'Brown Potatoes - Premium',
         discount: '12% Off',
-        pack: '1kg Pack',
-        price: '$20.00',
-        oldPrice: '$23.00',
+        packs: [
+          { label: '1kg Pack', price: '$20.00', oldPrice: '$23.00' }
+        ],
         desc: 'Premium quality brown potatoes, perfect for fries or curries.',
         cartName: 'Potato',
         cartPrice: 20
       }
     ];
 
-    // Get product id from URL (?id=2)
     function getProductId() {
       const params = new URLSearchParams(window.location.search);
       return parseInt(params.get('id')) || 1;
@@ -257,17 +325,64 @@
     function showProductDetails() {
       const id = getProductId();
       const product = products.find(p => p.id === id) || products[0];
-      document.getElementById('product-image').src = product.image;
+
+      // Gallery thumbs
+      const gallery = document.getElementById('gallery-thumbs');
+      if (gallery) {
+        gallery.innerHTML = '';
+        product.images.forEach((img, idx) => {
+          const thumb = document.createElement('img');
+          thumb.src = img;
+          thumb.className = 'img-thumbnail gallery-thumb';
+          thumb.style = 'width:60px; height:60px; object-fit:cover; cursor:pointer;';
+          thumb.onclick = () => {
+            document.getElementById('product-image').src = img;
+          };
+          gallery.appendChild(thumb);
+        });
+      }
+      // Main image
+      document.getElementById('product-image').src = product.images[0];
       document.getElementById('product-image').alt = product.title;
       document.getElementById('product-title').textContent = product.title;
       document.getElementById('product-discount').textContent = product.discount;
-      document.getElementById('product-pack').textContent = product.pack;
-      document.getElementById('product-price').textContent = product.price;
-      document.getElementById('product-old-price').textContent = product.oldPrice;
       document.getElementById('product-desc').textContent = product.desc;
-      // Update Add to Cart button
+
+      // Packs/Quantity
+      const packDiv = document.getElementById('product-pack');
+      const qtyDiv = document.getElementById('quantity-section');
+      if (product.packs && product.packs.length > 1) {
+        qtyDiv.innerHTML = '<label class="fw-bold me-2">Quantity</label>';
+        product.packs.forEach((pack, idx) => {
+          const btn = document.createElement('button');
+          btn.className = 'btn btn-outline-primary btn-sm me-2' + (idx === 0 ? ' active' : '');
+          btn.textContent = pack.label;
+          btn.onclick = function() {
+            document.querySelectorAll('#quantity-section button').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            packDiv.textContent = pack.label;
+            document.getElementById('product-price').textContent = pack.price;
+            document.getElementById('product-old-price').textContent = pack.oldPrice;
+          };
+          qtyDiv.appendChild(btn);
+        });
+        packDiv.textContent = product.packs[0].label;
+        document.getElementById('product-price').textContent = product.packs[0].price;
+        document.getElementById('product-old-price').textContent = product.packs[0].oldPrice;
+      } else if (product.packs && product.packs.length === 1) {
+        packDiv.textContent = product.packs[0].label;
+        document.getElementById('product-price').textContent = product.packs[0].price;
+        document.getElementById('product-old-price').textContent = product.packs[0].oldPrice;
+        qtyDiv.innerHTML = '';
+      }
+
+      // Add to Cart button
       document.getElementById('add-to-cart-btn').onclick = function() {
-        addToCart(product.cartName, product.cartPrice);
+        alert('Added to cart: ' + product.title);
+      };
+      // Buy Now button
+      document.getElementById('buy-now-btn').onclick = function() {
+        alert('Proceeding to buy: ' + product.title);
       };
     }
 
