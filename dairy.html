@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dairy - Ekomart</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ekomart - Dairy Products</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <link href="style.css" rel="stylesheet">
-  <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; color: #333; }
-    .section-title { display: flex; align-items: center; font-weight: 700; font-size: 1.5rem; margin-bottom: 1.5rem; }
-    .section-title::before { content: ''; display: inline-block; width: 20px; height: 20px; border-radius: 50%; background-color: #f4b536; margin-right: 10px; }
-    .card { border: none; border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); }
-    .card-img-top { height: 220px; object-fit: cover; transition: transform 0.3s ease; }
-    .card:hover .card-img-top { transform: scale(1.05); }
-    .card-title { color: #0d6efd; font-weight: 600; }
-    .btn-primary { transition: background-color 0.3s ease, transform 0.2s ease; }
-    .btn-primary:hover { background-color: #084298; transform: scale(1.05); }
-  </style>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
+
 <body>
   <!-- Promo Top Bar -->
   <div class="bg-success text-white py-2 promo-bar">
@@ -41,13 +33,148 @@
   <!-- Secondary Header -->
   <div class="bg-light border-bottom py-2">
     <div class="container d-flex justify-content-between align-items-center flex-wrap small text-muted">
+      <!-- Left Section -->
       <div class="d-flex flex-wrap align-items-center gap-3">
-        <a href="about.html" class="text-muted text-decoration-none"><i class="bi bi-info-circle me-1"></i>About Us</a>
-        <a href="logiin.html" class="text-muted text-decoration-none"><i class="bi bi-person me-1"></i>My Account</a>
+        <a href="#" class="text-muted text-decoration-none"><i class="bi bi-info-circle me-1"></i>About Us</a>
+        <a href="./logiin.html" class="text-muted text-decoration-none"><i class="bi bi-person me-1"></i>My Account</a>
         <a href="#" class="text-muted text-decoration-none"><i class="bi bi-heart me-1"></i>Wishlist</a>
         <span class="vr"></span>
         <span><i class="bi bi-clock me-1"></i>We deliver everyday 7:00 - 22:00</span>
       </div>
+      <!-- Right Section -->
+      <div class="d-flex flex-wrap align-items-center gap-3">
+        <div class="dropdown">
+          <a class="dropdown-toggle text-muted text-decoration-none" href="#" role="button" data-bs-toggle="dropdown">
+            <i class="bi bi-translate me-1"></i>English
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">Hindi</a></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle text-muted text-decoration-none" href="#" role="button" data-bs-toggle="dropdown">
+            <i class="bi bi-currency-dollar me-1"></i>USD
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">USD</a></li>
+            <li><a class="dropdown-item" href="#">INR</a></li>
+          </ul>
+        </div>
+        <a href="#" class="text-muted text-decoration-none"><i class="bi bi-truck me-1"></i>Track Order</a>
+      </div>
+    </div>
+  </div>
+  <!-- Main Header -->
+<div class="bg-white py-3 border-bottom sticky-top" style="z-index: 1020;">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap">
+    <!-- Logo -->
+    <a href="#" class="d-flex align-items-center text-decoration-none me-4">
+      <img src="https://t3.ftcdn.net/jpg/02/47/48/00/360_F_247480017_ST4hotATsrcErAja0VzdUsrrVBMIcE4u.jpg" alt="Logo" width="48" height="48" class="me-2">
+      <span class="fs-3 fw-bold eko-blue">EKO</span><span class="fs-3 fw-bold ekomart-orange">MART</span>
+    </a>
+    <!-- Categories + Search all in one div -->
+    <div class="d-flex align-items-center flex-grow-1" style="max-width: 700px;">
+      <div class="input-group">
+        <button class="btn btn-light fw-bold text-dark border-end dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false">
+    <i class="bi bi-list"></i> Categories
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="fruits-vegetables.html">Fruits & Vegetables</a></li>
+    <li><a class="dropdown-item" href="dairy.html">Dairy</a></li>
+    <li><a class="dropdown-item" href="bakery.html">Bakery</a></li>
+    <li><a class="dropdown-item" href="meat.html">Meat</a></li>
+    <li><a class="dropdown-item" href="snacks.html">Snacks</a></li>
+    <li><a class="dropdown-item" href="beverages.html">Beverages</a></li>
+  </ul>
+</div>
+
+      <!-- Right Icons -->
+      <div class="nav-icons d-flex align-items-center gap-2 ms-3">
+        <button class="btn d-flex align-items-center position-relative">
+          <i class="bi bi-person fs-5"></i>
+          <span class="d-none d-md-inline ms-2">Account</span>
+        </button>
+        <button class="btn d-flex align-items-center position-relative">
+          <i class="bi bi-bell fs-5"></i>
+          <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success">0</span>
+        </button>
+        <button class="btn d-flex align-items-center position-relative">
+          <i class="bi bi-heart fs-5"></i>
+          <span class="d-none d-md-inline ms-2">Wishlist</span>
+          <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success wishlist-count">0</span>
+        </button>
+        <button class="btn d-flex align-items-center position-relative" onclick="window.location.href='cart.html'">
+          <i class="bi bi-cart fs-5"></i>
+          <span class="d-none d-md-inline ms-2">Cart</span>
+          <span id="cart-count" class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-danger">0</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+</div>
+  <!-- Navigation Bar -->
+  <nav class="bg-light border-bottom">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap py-2">
+      <!-- Left Navigation Links -->
+      <ul class="nav gap-1">
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-semibold px-3" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Shop</a></li>
+        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Vendors</a></li>
+        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Pages</a></li>
+        <li class="nav-item position-relative">
+          <a class="nav-link text-dark fw-semibold px-3" href="#">Dashboard
+            <span class="position-absolute top-0 start-100 translate-middle badge bg-success rounded-pill"
+              style="font-size: 0.6rem;">New</span>
+          </a>
+        </li>
+        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="contact.html">Contact</a></li>
+      </ul>
+      
+          <button class="btn btn-success btn-sale shadow-sm ml-auto">
+      🎉 30% OFF
+    </button>
+  </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Promo Top Bar -->
+  <div class="bg-success text-white py-2 promo-bar">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center small">
+      <div class="d-flex align-items-center gap-2 mb-2 mb-md-0">
+        <i class="bi bi-truck fs-5 me-2"></i>
+        <span>FREE delivery & 40% Discount for next 3 orders! Place your 1st order in:</span>
+        <strong class="ms-1"><span id="promo-days">20</span></strong> Days
+        <strong><span id="promo-hours">23</span></strong> Hour
+        <strong><span id="promo-minutes">28</span></strong> Min
+        <strong><span id="promo-seconds">40</span></strong> Sec
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-telephone me-1"></i>
+        <span>Need help? Call Us:</span> <strong>+258 3268 21485</strong>
+      </div>
+    </div>
+  </div>
+  <!-- Secondary Header -->
+  <div class="bg-light border-bottom py-2">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap small text-muted">
+      <!-- Left Section -->
+      <div class="d-flex flex-wrap align-items-center gap-3">
+        <a href="#" class="text-muted text-decoration-none"><i class="bi bi-info-circle me-1"></i>About Us</a>
+        <a href="./logiin.html" class="text-muted text-decoration-none"><i class="bi bi-person me-1"></i>My Account</a>
+        <a href="#" class="text-muted text-decoration-none"><i class="bi bi-heart me-1"></i>Wishlist</a>
+        <span class="vr"></span>
+        <span><i class="bi bi-clock me-1"></i>We deliver everyday 7:00 - 22:00</span>
+      </div>
+      <!-- Right Section -->
       <div class="d-flex flex-wrap align-items-center gap-3">
         <div class="dropdown">
           <a class="dropdown-toggle text-muted text-decoration-none" href="#" role="button" data-bs-toggle="dropdown">
@@ -73,107 +200,161 @@
   </div>
   <!-- Main Header -->
   <div class="bg-white py-3 border-bottom sticky-top" style="z-index: 1020;">
-    <div class="container d-flex justify-content-between align-items-center flex-nowrap">
-      <a href="home.html" class="d-flex align-items-center text-decoration-none me-4">
-        <img src="images/logo.png" alt="Logo" width="48" height="48" class="me-2">
-        <span class="fs-3 fw-bold text-dark">EKO</span><span class="fs-3 fw-bold text-success">MART</span>
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+      <!-- Logo -->
+      <a href="#" class="d-flex align-items-center text-decoration-none me-4">
+        <img src="https://t3.ftcdn.net/jpg/02/47/48/00/360_F_247480017_ST4hotATsrcErAja0VzdUsrrVBMIcE4u.jpg" alt="Logo"
+          width="48" height="48" class="me-2">
+        <span class="fs-3 fw-bold eko-blue">EKO</span><span class="fs-3 fw-bold ekomart-orange">MART</span>
       </a>
-      <div class="d-flex flex-grow-1 mx-3" style="max-width: 600px; min-width: 260px;">
-        <div class="input-group shadow-sm rounded-3 overflow-hidden">
-          <button class="btn btn-light fw-bold text-dark border-end px-3 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list"></i> Categories</button>
+      <!-- Categories + Search all in one div -->
+      <div class="d-flex align-items-center flex-grow-1" style="max-width: 700px;">
+        <div class="input-group">
+          <button class="btn btn-light fw-bold text-dark border-end dropdown-toggle" type="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-list"></i> Categories
+          </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Fruits & Vegetables</a></li>
-            <li><a class="dropdown-item" href="#">Dairy</a></li>
-            <li><a class="dropdown-item" href="#">Bakery</a></li>
-            <li><a class="dropdown-item" href="#">Meat</a></li>
-            <li><a class="dropdown-item" href="#">Snacks</a></li>
-            <li><a class="dropdown-item" href="#">Beverages</a></li>
+            <li><a class="dropdown-item" href="fruits-vegetables.html">Fruits & Vegetables</a></li>
+            <li><a class="dropdown-item" href="dairy.html">Dairy</a></li>
+            <li><a class="dropdown-item" href="bakery.html">Bakery</a></li>
+            <li><a class="dropdown-item" href="meat.html">Meat</a></li>
+            <li><a class="dropdown-item" href="snacks.html">Snacks</a></li>
+            <li><a class="dropdown-item" href="beverages.html">Beverages</a></li>
           </ul>
-          <input type="text" class="form-control border-0" placeholder="Search for products, categories or brands">
-          <button class="btn btn-success fw-bold px-4"><i class="bi bi-search me-1"></i>Search</button>
+        </div>
+
+        <!-- Right Icons -->
+        <div class="nav-icons d-flex align-items-center gap-2 ms-3">
+          <button class="btn d-flex align-items-center position-relative">
+            <i class="bi bi-person fs-5"></i>
+            <span class="d-none d-md-inline ms-2">Account</span>
+          </button>
+          <button class="btn d-flex align-items-center position-relative">
+            <i class="bi bi-bell fs-5"></i>
+            <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success">0</span>
+          </button>
+          <button class="btn d-flex align-items-center position-relative">
+            <i class="bi bi-heart fs-5"></i>
+            <span class="d-none d-md-inline ms-2">Wishlist</span>
+            <span
+              class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success wishlist-count">0</span>
+          </button>
+          <button class="btn d-flex align-items-center position-relative" onclick="window.location.href='cart.html'">
+            <i class="bi bi-cart fs-5"></i>
+            <span class="d-none d-md-inline ms-2">Cart</span>
+            <span id="cart-count"
+              class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-danger">0</span>
+          </button>
         </div>
       </div>
-      <div class="nav-icons d-flex align-items-center gap-2 ms-3">
-        <button class="btn d-flex align-items-center position-relative">
-          <i class="bi bi-person fs-5"></i>
-          <span class="d-none d-md-inline ms-2">Account</span>
-        </button>
-        <button class="btn d-flex align-items-center position-relative">
-          <i class="bi bi-bell fs-5"></i>
-          <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success">0</span>
-        </button>
-        <button class="btn d-flex align-items-center position-relative">
-          <i class="bi bi-heart fs-5"></i>
-          <span class="d-none d-md-inline ms-2">Wishlist</span>
-          <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success">0</span>
-        </button>
-        <button class="btn d-flex align-items-center position-relative">
-          <i class="bi bi-cart fs-5"></i>
-          <a href="cart.html" class="btn btn-outline-light position-relative">🛒<span class="d-none d-md-inline ms-2">Cart</span><span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span></a>
-          <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success">0</span>
-        </button>
-      </div>
     </div>
+
+
+  </div>
   </div>
   <!-- Navigation Bar -->
   <nav class="bg-light border-bottom">
     <div class="container d-flex justify-content-between align-items-center flex-wrap py-2">
+      <!-- Left Navigation Links -->
       <ul class="nav gap-1">
-        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="home.html">Home</a></li>
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-semibold px-3" href="home.html">Home</a>
+        </li>
         <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="about.html">About</a></li>
         <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Shop</a></li>
         <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Vendors</a></li>
         <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Pages</a></li>
-        <li class="nav-item position-relative"><a class="nav-link text-dark fw-semibold px-3" href="#">Dashboard<span class="position-absolute top-0 start-100 translate-middle badge bg-success rounded-pill" style="font-size: 0.6rem;">New</span></a></li>
+        <li class="nav-item position-relative">
+          <a class="nav-link text-dark fw-semibold px-3" href="#">Dashboard
+            <span class="position-absolute top-0 start-100 translate-middle badge bg-success rounded-pill"
+              style="font-size: 0.6rem;">New</span>
+          </a>
+        </li>
         <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="contact.html">Contact</a></li>
       </ul>
-      <button class="btn btn-success btn-sale shadow-sm ml-auto">🎉 30% OFF</button>
+
+      <button class="btn btn-success btn-sale shadow-sm ml-auto">
+        🎉 30% OFF
+      </button>
+    </div>
+    </div>
     </div>
   </nav>
 
-  <div class="container py-5">
-    <div class="section-title">Dairy</div>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="./img/dairy.jpg" class="card-img-top" alt="Milk & Cheese">
-          <div class="card-body">
-            <h5 class="card-title">Milk & Cheese</h5>
-            <p class="card-text">Fresh milk, cheese, and more from trusted farms.</p>
-            <a href="#" class="btn btn-primary">Explore</a>
-          </div>
+
+  <!-- ================== Body Section ================== -->
+  <div class="container-fluid py-5">
+    <div class="row">
+      <!-- Sidebar -->
+      <aside class="col-md-3">
+        <div class="bg-white border rounded-3 shadow-sm p-3 mb-4">
+          <h6 class="fw-bold mb-2">Price Range</h6>
+          <input type="range" class="form-range" id="priceRange" min="0" max="300" value="300">
+          <p class="small mb-2">Price: $0 – <span id="priceValue">300</span></p>
+          <button class="btn btn-success w-100">Filter</button>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="./img/vanilaice.jpg" class="card-img-top" alt="Ice Cream">
-          <div class="card-body">
-            <h5 class="card-title">Ice Cream</h5>
-            <p class="card-text">Delicious ice creams for every occasion.</p>
-            <a href="#" class="btn btn-primary">Explore</a>
-          </div>
+
+        <!-- Categories -->
+        <h6 class="fw-bold mb-2">Product Categories</h6>
+        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" value="Milk"
+            id="cat-milk"><label for="cat-milk">Milk</label></div>
+        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" value="Butter"
+            id="cat-butter"><label for="cat-butter">Butter</label></div>
+        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" value="Cheese"
+            id="cat-cheese"><label for="cat-cheese">Cheese</label></div>
+        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" value="Curd"
+            id="cat-curd"><label for="cat-curd">Curd & Yogurt</label></div>
+        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" value="Paneer"
+            id="cat-paneer"><label for="cat-paneer">Paneer</label></div>
+        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" value="Ghee"
+            id="cat-ghee"><label for="cat-ghee">Ghee</label></div>
+        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" value="Cream"
+            id="cat-cream"><label for="cat-cream">Cream</label></div>
+
+        <!-- Brands -->
+        <h6 class="fw-bold mb-2">Select Brands</h6>
+        <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="Amul"
+            id="brand-amul"><label for="brand-amul">Amul</label></div>
+        <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="MotherDairy"
+            id="brand-md"><label for="brand-md">Mother Dairy</label></div>
+        <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="Nestle"
+            id="brand-nestle"><label for="brand-nestle">Nestle</label></div>
+
+      </aside>
+
+      <!-- Products Grid -->
+      <main class="col-md-9">
+        <div class="row g-4" id="productList">
+          <!-- Dairy product cards will be rendered here -->
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="./img/food1.jpg" class="card-img-top" alt="Yogurt">
-          <div class="card-body">
-            <h5 class="card-title">Yogurt</h5>
-            <p class="card-text">Healthy and tasty yogurt options.</p>
-            <a href="#" class="btn btn-primary">Explore</a>
-          </div>
-        </div>
-      </div>
+      </main>
     </div>
   </div>
 
-  <footer class="footer bg-light pt-5">
+  <!-- Floating Cart Counter -->
+  <div class="position-fixed bottom-0 end-0 bg-success text-white px-3 py-2 rounded-top-start shadow"
+    style="z-index:1050; font-weight:500; min-width:260px;">
+    🛒 Cart Items: <span id="cartCount">0</span>
+    <button class="btn btn-light btn-sm ms-2" id="showCartBtn">View Cart</button>
+    <div id="cartSidebar" class="bg-white text-dark border rounded shadow p-3 position-fixed end-0 bottom-0"
+      style="width:300px; max-height:60vh; overflow-y:auto; display:none; z-index:1100;">
+      <h6 class="fw-bold mb-2">Your Cart</h6>
+      <ul id="cartList" class="list-unstyled mb-2"></ul>
+      <a href="cart.html" class="btn btn-primary w-100 mb-2">Go to Cart Page</a>
+      <button class="btn btn-success w-100" id="closeCartBtn">Close</button>
+    </div>
+  </div>
+  <!-- footer section -->
+  <footer class="footer bg-light pt-5" data-aos="fade-up" data-aos-delay="1400">
     <div class="container">
       <div class="row">
+        <!-- About Company -->
         <div class="col-md-3 mb-4">
           <h6 class="fw-bold">About Company</h6>
           <div class="d-flex align-items-center my-3">
-            <div class="bg-white border rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+            <div class="bg-white border rounded-circle d-flex align-items-center justify-content-center"
+              style="width: 45px; height: 45px;">
               <i class="bi bi-telephone-fill text-success fs-5"></i>
             </div>
             <div class="ms-3">
@@ -187,6 +368,8 @@
             <li>Sunday: <strong class="text-dark">Service Close</strong></li>
           </ul>
         </div>
+
+        <!-- Our Stores -->
         <div class="col-md-2 mb-4">
           <h6 class="fw-bold">Our Stores</h6>
           <ul class="list-unstyled text-muted">
@@ -197,6 +380,8 @@
             <li><a href="#" class="text-decoration-none text-muted">Careers</a></li>
           </ul>
         </div>
+
+        <!-- Shop Categories -->
         <div class="col-md-2 mb-4">
           <h6 class="fw-bold">Shop Categories</h6>
           <ul class="list-unstyled text-muted">
@@ -207,6 +392,8 @@
             <li><a href="#" class="text-decoration-none text-muted">Nest Stories</a></li>
           </ul>
         </div>
+
+        <!-- Useful Links -->
         <div class="col-md-2 mb-4">
           <h6 class="fw-bold">Useful Links</h6>
           <ul class="list-unstyled text-muted">
@@ -217,9 +404,12 @@
             <li><a href="#" class="text-decoration-none text-muted">FAQ</a></li>
           </ul>
         </div>
+
+        <!-- Newsletter -->
         <div class="col-md-3 mb-4">
           <h6 class="fw-bold">Our Newsletter</h6>
-          <p class="text-muted small">Subscribe to the mailing list to receive updates on the new arrivals and other discounts</p>
+          <p class="text-muted small">Subscribe to the mailing list to receive updates on the new arrivals and other
+            discounts</p>
           <form class="d-flex mb-2">
             <input type="email" class="form-control rounded-0" placeholder="Your email address">
             <button class="btn btn-success rounded-0 ms-2">Subscribe</button>
@@ -227,6 +417,8 @@
           <small class="text-muted">I would like to receive news and special offer</small>
         </div>
       </div>
+
+      <!-- Bottom Bar -->
       <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3 border-top">
         <div class="mb-2 mb-md-0">
           <small>Copyright 2025 <strong class="text-dark">Ekomart</strong>. All rights reserved.</small>
@@ -242,6 +434,8 @@
           </div>
         </div>
       </div>
+
+      <!-- Payment and App -->
       <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
         <div class="mb-2 mb-md-0">
           <span class="me-2">Payment Accepts:</span>
@@ -252,11 +446,176 @@
         </div>
         <div>
           <span class="me-2">Download App</span>
-          <img src="https://brandlogos.net/wp-content/uploads/2021/10/Google-Pay-logo-symbol-1.png" alt="Google Play" height="35">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlhKAByCkA9Om3lRlLKWOS-CrhYniOnGFqjQ&s" alt="App Store" height="35">
+          <img src="https://brandlogos.net/wp-content/uploads/2021/10/Google-Pay-logo-symbol-1.png" alt="Google Play"
+            height="35">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlhKAByCkA9Om3lRlLKWOS-CrhYniOnGFqjQ&s"
+            alt="App Store" height="35">
         </div>
       </div>
     </div>
   </footer>
+
+
+  <script>
+    // ================== Product Data ==================
+const products = [
+  // --- Milk ---
+  { id: 101, name: 'Amul Toned Milk 1L', category: 'Milk', brand: 'Amul', price: 55, img: './img/amul-milk.jpg', badge: 'Fresh', badgeClass: 'bg-success text-white', oldPrice: 60 },
+  { id: 102, name: 'Mother Dairy Full Cream 1L', category: 'Milk', brand: 'MotherDairy', price: 62, img: './img/md-milk.jpg', badge: 'Popular', badgeClass: 'bg-warning text-dark', oldPrice: 68 },
+  { id: 103, name: 'Nestle Slim Milk 1L', category: 'Milk', brand: 'Nestle', price: 58, img: './img/nestle-milk.jpg', badge: 'Healthy', badgeClass: 'bg-primary text-white', oldPrice: 65 },
+  { id: 104, name: 'Amul Gold Full Cream 1L', category: 'Milk', brand: 'Amul', price: 70, img: './img/amul-gold.jpg', badge: 'Best Seller', badgeClass: 'bg-danger text-white', oldPrice: 75 },
+
+  // --- Butter ---
+  { id: 105, name: 'Amul Butter 500g', category: 'Butter', brand: 'Amul', price: 235, img: './img/amul-butter.jpg', badge: 'Hot', badgeClass: 'bg-danger text-white', oldPrice: 250 },
+  { id: 106, name: 'Mother Dairy Butter 500g', category: 'Butter', brand: 'MotherDairy', price: 230, img: './img/md-butter.jpg', badge: 'New', badgeClass: 'bg-info text-dark', oldPrice: 245 },
+  { id: 107, name: 'Nestle Butter 500g', category: 'Butter', brand: 'Nestle', price: 240, img: './img/nestle-butter.jpg', badge: 'Fresh', badgeClass: 'bg-success text-white', oldPrice: 255 },
+
+  // --- Cheese ---
+  { id: 108, name: 'Amul Cheese Slices 200g', category: 'Cheese', brand: 'Amul', price: 125, img: './img/amul-cheese.jpg', badge: 'Best Seller', badgeClass: 'bg-danger text-white', oldPrice: 135 },
+  { id: 109, name: 'Mother Dairy Mozzarella 200g', category: 'Cheese', brand: 'MotherDairy', price: 135, img: './img/md-cheese.jpg', badge: 'Fresh', badgeClass: 'bg-success text-white', oldPrice: 145 },
+  { id: 110, name: 'Nestle Cheddar Cheese 200g', category: 'Cheese', brand: 'Nestle', price: 140, img: './img/nestle-cheese.jpg', badge: 'Hot', badgeClass: 'bg-danger text-white', oldPrice: 150 },
+
+  // --- Curd / Yogurt ---
+  { id: 111, name: 'Mother Dairy Curd 500g', category: 'Curd', brand: 'MotherDairy', price: 45, img: './img/md-curd.jpg', badge: 'Fresh', badgeClass: 'bg-success text-white', oldPrice: 50 },
+  { id: 112, name: 'Amul Masti Dahi 500g', category: 'Curd', brand: 'Amul', price: 48, img: './img/amul-curd.jpg', badge: 'Popular', badgeClass: 'bg-warning text-dark', oldPrice: 55 },
+  { id: 113, name: 'Nestle Greek Yogurt 100g', category: 'Curd', brand: 'Nestle', price: 35, img: './img/nestle-yogurt.jpg', badge: 'New', badgeClass: 'bg-info text-dark', oldPrice: 40 },
+  { id: 114, name: 'Amul Probiotic Yogurt 100g', category: 'Curd', brand: 'Amul', price: 38, img: './img/amul-yogurt.jpg', badge: 'Healthy', badgeClass: 'bg-primary text-white', oldPrice: 42 },
+
+  // --- Paneer ---
+  { id: 115, name: 'Amul Paneer 500g', category: 'Paneer', brand: 'Amul', price: 150, img: './img/amul-paneer.jpg', badge: 'Best Seller', badgeClass: 'bg-danger text-white', oldPrice: 160 },
+  { id: 116, name: 'Mother Dairy Paneer 500g', category: 'Paneer', brand: 'MotherDairy', price: 155, img: './img/md-paneer.jpg', badge: 'Fresh', badgeClass: 'bg-success text-white', oldPrice: 165 },
+  { id: 117, name: 'Nestle Fresh Paneer 500g', category: 'Paneer', brand: 'Nestle', price: 160, img: './img/nestle-paneer.jpg', badge: 'Hot', badgeClass: 'bg-danger text-white', oldPrice: 170 },
+
+  // --- Ghee ---
+  { id: 118, name: 'Amul Pure Ghee 1L', category: 'Ghee', brand: 'Amul', price: 540, img: './img/amul-ghee.jpg', badge: 'Premium', badgeClass: 'bg-warning text-dark', oldPrice: 560 },
+  { id: 119, name: 'Mother Dairy Ghee 1L', category: 'Ghee', brand: 'MotherDairy', price: 535, img: './img/md-ghee.jpg', badge: 'Fresh', badgeClass: 'bg-success text-white', oldPrice: 555 },
+  { id: 120, name: 'Nestle Desi Ghee 1L', category: 'Ghee', brand: 'Nestle', price: 550, img: './img/nestle-ghee.jpg', badge: 'Hot', badgeClass: 'bg-danger text-white', oldPrice: 575 },
+
+  // --- Cream ---
+  { id: 121, name: 'Amul Fresh Cream 250ml', category: 'Cream', brand: 'Amul', price: 65, img: './img/amul-cream.jpg', badge: 'Fresh', badgeClass: 'bg-success text-white', oldPrice: 70 },
+  { id: 122, name: 'Mother Dairy Fresh Cream 250ml', category: 'Cream', brand: 'MotherDairy', price: 68, img: './img/md-cream.jpg', badge: 'New', badgeClass: 'bg-info text-dark', oldPrice: 75 },
+  { id: 123, name: 'Nestle Cream 250ml', category: 'Cream', brand: 'Nestle', price: 72, img: './img/nestle-cream.jpg', badge: 'Popular', badgeClass: 'bg-warning text-dark', oldPrice: 80 }
+];
+
+
+    // ================== Cart Functions ==================
+    function syncCartCounters() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const count = cart.reduce((sum, item) => sum + item.qty, 0);
+      document.querySelectorAll('#cartCount').forEach(el => el.textContent = count);
+    }
+
+    function renderProducts() {
+      const productList = document.getElementById('productList');
+      productList.innerHTML = '';
+
+      // get selected filters
+      const selectedCategories = Array.from(document.querySelectorAll('.category-filter:checked')).map(cb => cb.value);
+      const selectedBrands = Array.from(document.querySelectorAll('.brand-filter:checked')).map(cb => cb.value);
+      const maxPrice = parseFloat(document.getElementById('priceRange').value);
+
+      const filteredProducts = products.filter(p => {
+        const catOk = selectedCategories.length === 0 || selectedCategories.includes(p.category);
+        const brandOk = selectedBrands.length === 0 || selectedBrands.includes(p.brand);
+        const priceOk = p.price <= maxPrice;
+        return catOk && brandOk && priceOk;
+      });
+
+      filteredProducts.forEach(product => {
+        const col = document.createElement('div');
+        col.className = 'col-md-4';
+        col.innerHTML = `
+        <div class="card h-100 shadow-sm">
+          <span class="badge ${product.badgeClass} position-absolute m-2">${product.badge}</span>
+          <img src="${product.img}" class="card-img-top" alt="${product.name}">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">${product.name}</h5>
+            <p class="card-text mb-1"><span class="fw-bold">$${product.price}</span> <del class="text-muted">$${product.oldPrice}</del></p>
+            <button class="btn btn-success mt-auto add-to-cart-btn" 
+              data-id="${product.id}"
+              data-name="${product.name}" 
+              data-price="${product.price}" 
+              data-img="${product.img}">
+              <i class="bi bi-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+        </div>`;
+        productList.appendChild(col);
+      });
+
+      attachAddToCart();
+    }
+
+    function attachAddToCart() {
+      document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+          const id = this.getAttribute('data-id');
+          const name = this.getAttribute('data-name');
+          const price = parseFloat(this.getAttribute('data-price'));
+          const img = this.getAttribute('data-img');
+
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          let found = cart.find(item => item.id == id);
+
+          if (found) {
+            found.qty += 1;
+          } else {
+            cart.push({ id, name, price, qty: 1, image: img });
+          }
+
+          localStorage.setItem('cart', JSON.stringify(cart));
+          syncCartCounters();
+          renderCartSidebar();
+        });
+      });
+    }
+
+    function renderCartSidebar() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartList = document.getElementById('cartList');
+      cartList.innerHTML = '';
+
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'd-flex justify-content-between align-items-center mb-2';
+        li.innerHTML = `
+        <div class="d-flex align-items-center">
+          <img src="${item.image}" alt="${item.name}" style="width:40px; height:40px; object-fit:cover;" class="me-2">
+          <span>${item.name} (x${item.qty})</span>
+        </div>
+        <span>$${(item.price * item.qty).toFixed(2)}</span>
+      `;
+        cartList.appendChild(li);
+      });
+    }
+
+    // ================== Event Listeners ==================
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProducts();
+      syncCartCounters();
+
+      document.querySelectorAll('.category-filter, .brand-filter').forEach(cb => {
+        cb.addEventListener('change', renderProducts);
+      });
+
+      document.getElementById('priceRange').addEventListener('input', function () {
+        document.getElementById('priceValue').textContent = this.value;
+        renderProducts();
+      });
+
+      document.getElementById('showCartBtn').addEventListener('click', () => {
+        document.getElementById('cartSidebar').style.display = 'block';
+        renderCartSidebar();
+      });
+
+      document.getElementById('closeCartBtn').addEventListener('click', () => {
+        document.getElementById('cartSidebar').style.display = 'none';
+      });
+    });
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

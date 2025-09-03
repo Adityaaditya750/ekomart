@@ -1,262 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Bakery - Ekomart</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <link href="style.css" rel="stylesheet">
-  <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; color: #333; }
-    .section-title { display: flex; align-items: center; font-weight: 700; font-size: 1.5rem; margin-bottom: 1.5rem; }
-    .section-title::before { content: ''; display: inline-block; width: 20px; height: 20px; border-radius: 50%; background-color: #f4b536; margin-right: 10px; }
-    .card { border: none; border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); }
-    .card-img-top { height: 220px; object-fit: cover; transition: transform 0.3s ease; }
-    .card:hover .card-img-top { transform: scale(1.05); }
-    .card-title { color: #0d6efd; font-weight: 600; }
-    .btn-primary { transition: background-color 0.3s ease, transform 0.2s ease; }
-    .btn-primary:hover { background-color: #084298; transform: scale(1.05); }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- <style>
+    body { background:#f8f9fa; font-family: 'Segoe UI', sans-serif; }
+    .product-card { transition: all 0.3s; }
+    .product-card:hover { transform: translateY(-5px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .badge-position { position:absolute; top:10px; left:10px; }
+    .price { font-size: 1.1rem; font-weight: 600; color: #28a745; }
+    .old-price { text-decoration: line-through; color:#6c757d; margin-left: 6px; }
+  </style> -->
 </head>
 <body>
-  <!-- Promo Top Bar -->
-  <div class="bg-success text-white py-2 promo-bar">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center small">
-      <div class="d-flex align-items-center gap-2 mb-2 mb-md-0">
-        <i class="bi bi-truck fs-5 me-2"></i>
-        <span>FREE delivery & 40% Discount for next 3 orders! Place your 1st order in:</span>
-        <strong class="ms-1"><span id="promo-days">20</span></strong> Days
-        <strong><span id="promo-hours">23</span></strong> Hour
-        <strong><span id="promo-minutes">28</span></strong> Min
-        <strong><span id="promo-seconds">40</span></strong> Sec
-      </div>
-      <div class="d-flex align-items-center gap-2">
-        <i class="bi bi-telephone me-1"></i>
-        <span>Need help? Call Us:</span> <strong>+258 3268 21485</strong>
-      </div>
-    </div>
-  </div>
-  <!-- Secondary Header -->
-  <div class="bg-light border-bottom py-2">
-    <div class="container d-flex justify-content-between align-items-center flex-wrap small text-muted">
-      <div class="d-flex flex-wrap align-items-center gap-3">
-        <a href="about.html" class="text-muted text-decoration-none"><i class="bi bi-info-circle me-1"></i>About Us</a>
-        <a href="logiin.html" class="text-muted text-decoration-none"><i class="bi bi-person me-1"></i>My Account</a>
-        <a href="#" class="text-muted text-decoration-none"><i class="bi bi-heart me-1"></i>Wishlist</a>
-        <span class="vr"></span>
-        <span><i class="bi bi-clock me-1"></i>We deliver everyday 7:00 - 22:00</span>
-      </div>
-      <div class="d-flex flex-wrap align-items-center gap-3">
-        <div class="dropdown">
-          <a class="dropdown-toggle text-muted text-decoration-none" href="#" role="button" data-bs-toggle="dropdown">
-            <i class="bi bi-translate me-1"></i>English
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">English</a></li>
-            <li><a class="dropdown-item" href="#">Hindi</a></li>
-          </ul>
-        </div>
-        <div class="dropdown">
-          <a class="dropdown-toggle text-muted text-decoration-none" href="#" role="button" data-bs-toggle="dropdown">
-            <i class="bi bi-currency-dollar me-1"></i>USD
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">USD</a></li>
-            <li><a class="dropdown-item" href="#">INR</a></li>
-          </ul>
-        </div>
-        <a href="#" class="text-muted text-decoration-none"><i class="bi bi-truck me-1"></i>Track Order</a>
-      </div>
-    </div>
-  </div>
-  <!-- Main Header -->
-  <div class="bg-white py-3 border-bottom sticky-top" style="z-index: 1020;">
-    <div class="container d-flex justify-content-between align-items-center flex-nowrap">
-      <a href="home.html" class="d-flex align-items-center text-decoration-none me-4">
-        <img src="images/logo.png" alt="Logo" width="48" height="48" class="me-2">
-        <span class="fs-3 fw-bold text-dark">EKO</span><span class="fs-3 fw-bold text-success">MART</span>
-      </a>
-      <div class="d-flex flex-grow-1 mx-3" style="max-width: 600px; min-width: 260px;">
-        <div class="input-group shadow-sm rounded-3 overflow-hidden">
-          <button class="btn btn-light fw-bold text-dark border-end px-3 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list"></i> Categories</button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Fruits & Vegetables</a></li>
-            <li><a class="dropdown-item" href="#">Dairy</a></li>
-            <li><a class="dropdown-item" href="#">Bakery</a></li>
-            <li><a class="dropdown-item" href="#">Meat</a></li>
-            <li><a class="dropdown-item" href="#">Snacks</a></li>
-            <li><a class="dropdown-item" href="#">Beverages</a></li>
-          </ul>
-          <input type="text" class="form-control border-0" placeholder="Search for products, categories or brands">
-          <button class="btn btn-success fw-bold px-4"><i class="bi bi-search me-1"></i>Search</button>
-        </div>
-      </div>
-      <div class="nav-icons d-flex align-items-center gap-2 ms-3">
-        <button class="btn d-flex align-items-center position-relative">
-          <i class="bi bi-person fs-5"></i>
-          <span class="d-none d-md-inline ms-2">Account</span>
-        </button>
-        <button class="btn d-flex align-items-center position-relative">
-          <i class="bi bi-bell fs-5"></i>
-          <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success">0</span>
-        </button>
-        <button class="btn d-flex align-items-center position-relative">
-          <i class="bi bi-heart fs-5"></i>
-          <span class="d-none d-md-inline ms-2">Wishlist</span>
-          <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success">0</span>
-        </button>
-        <button class="btn d-flex align-items-center position-relative">
-          <i class="bi bi-cart fs-5"></i>
-          <a href="cart.html" class="btn btn-outline-light position-relative">🛒<span class="d-none d-md-inline ms-2">Cart</span><span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span></a>
-          <span class="badge rounded-pill position-absolute top-0 start-100 translate-middle bg-success">0</span>
-        </button>
-      </div>
-    </div>
-  </div>
-  <!-- Navigation Bar -->
-  <nav class="bg-light border-bottom">
-    <div class="container d-flex justify-content-between align-items-center flex-wrap py-2">
-      <ul class="nav gap-1">
-        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="home.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Shop</a></li>
-        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Vendors</a></li>
-        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="#">Pages</a></li>
-        <li class="nav-item position-relative"><a class="nav-link text-dark fw-semibold px-3" href="#">Dashboard<span class="position-absolute top-0 start-100 translate-middle badge bg-success rounded-pill" style="font-size: 0.6rem;">New</span></a></li>
-        <li class="nav-item"><a class="nav-link text-dark fw-semibold px-3" href="contact.html">Contact</a></li>
-      </ul>
-      <button class="btn btn-success btn-sale shadow-sm ml-auto">🎉 30% OFF</button>
-    </div>
-  </nav>
 
-  <div class="container py-5">
-    <div class="section-title">Bakery</div>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-            <img src="./img/bakery.jpg" class="card-img-top" alt="Bakery Products">
-            <div class="card-body">
-              <h5 class="card-title">Bakery Products</h5>
-              <p class="card-text">Freshly baked breads, cakes, and pastries every day.</p>
-              <button class="btn btn-primary w-100">Shop Now</button>
-            </div>
-        </div>
+<div class="container-fluid mt-4">
+  <div class="row">
+
+    <!-- Sidebar -->
+    <div class="col-lg-3">
+      <!-- Categories -->
+      <div class="bg-white border rounded-3 shadow-sm p-3 mb-4">
+        <h6 class="fw-bold mb-2">Bakery Categories</h6>
+        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" value="Bread" id="cat-bread"><label class="form-check-label" for="cat-bread">Bread</label></div>
+        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" value="Cake" id="cat-cake"><label class="form-check-label" for="cat-cake">Cakes</label></div>
+        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" value="Cookies" id="cat-cookies"><label class="form-check-label" for="cat-cookies">Cookies</label></div>
+        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" value="Pastry" id="cat-pastry"><label class="form-check-label" for="cat-pastry">Pastries</label></div>
+        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" value="Donut" id="cat-donut"><label class="form-check-label" for="cat-donut">Donuts</label></div>
+        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" value="Muffin" id="cat-muffin"><label class="form-check-label" for="cat-muffin">Muffins</label></div>
       </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-            <img src="./img/buberrycake.jpg" class="card-img-top" alt="Blueberry Cake">
-            <div class="card-body">
-              <h5 class="card-title">Blueberry Cake</h5>
-              <p class="card-text">Delicious blueberry cake, perfect for celebrations.</p>
-              <button class="btn btn-primary w-100">Shop Now</button>
-            </div>
-        </div>
+
+      <!-- Brands -->
+      <div class="bg-white border rounded-3 shadow-sm p-3 mb-4">
+        <h6 class="fw-bold mb-2">Bakery Brands</h6>
+        <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="Britannia" id="brand-brit"><label class="form-check-label" for="brand-brit">Britannia</label></div>
+        <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="Amul" id="brand-amul"><label class="form-check-label" for="brand-amul">Amul</label></div>
+        <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="Harvest" id="brand-harvest"><label class="form-check-label" for="brand-harvest">Harvest</label></div>
+        <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="Monginis" id="brand-mong"><label class="form-check-label" for="brand-mong">Monginis</label></div>
+        <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="Sunfeast" id="brand-sun"><label class="form-check-label" for="brand-sun">ITC Sunfeast</label></div>
       </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-            <img src="./img/vanilaice.jpg" class="card-img-top" alt="Vanilla Ice Cream">
-            <div class="card-body">
-              <h5 class="card-title">Vanilla Ice Cream</h5>
-              <p class="card-text">Classic vanilla ice cream, creamy and smooth.</p>
-              <button class="btn btn-primary w-100">Shop Now</button>
-            </div>
-        </div>
+
+      <!-- Price -->
+      <div class="bg-white border rounded-3 shadow-sm p-3 mb-4">
+        <h6 class="fw-bold mb-2">Price Range</h6>
+        <input type="range" class="form-range" min="10" max="500" step="5" id="priceRange" value="500">
+        <p>Up to ₹<span id="priceValue">500</span></p>
       </div>
     </div>
-  </div>
 
-  <footer class="footer bg-light pt-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 mb-4">
-          <h6 class="fw-bold">About Company</h6>
-          <div class="d-flex align-items-center my-3">
-            <div class="bg-white border rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
-              <i class="bi bi-telephone-fill text-success fs-5"></i>
-            </div>
-            <div class="ms-3">
-              <small class="text-muted">Have Question? Call Us 24/7</small>
-              <div class="text-success fw-bold">+258 3692 2569</div>
-            </div>
-          </div>
-          <ul class="list-unstyled text-muted small">
-            <li>Monday – Friday: <strong class="text-dark">8:00am – 6:00pm</strong></li>
-            <li>Saturday: <strong class="text-dark">8:00am – 6:00pm</strong></li>
-            <li>Sunday: <strong class="text-dark">Service Close</strong></li>
-          </ul>
-        </div>
-        <div class="col-md-2 mb-4">
-          <h6 class="fw-bold">Our Stores</h6>
-          <ul class="list-unstyled text-muted">
-            <li><a href="#" class="text-decoration-none text-muted">Delivery Information</a></li>
-            <li><a href="#" class="text-decoration-none text-muted">Privacy Policy</a></li>
-            <li><a href="#" class="text-decoration-none text-muted">Terms & Conditions</a></li>
-            <li><a href="#" class="text-decoration-none text-muted">Support Center</a></li>
-            <li><a href="#" class="text-decoration-none text-muted">Careers</a></li>
-          </ul>
-        </div>
-        <div class="col-md-2 mb-4">
-          <h6 class="fw-bold">Shop Categories</h6>
-          <ul class="list-unstyled text-muted">
-            <li><a href="#" class="text-decoration-none text-muted">Contact Us</a></li>
-            <li><a href="#" class="text-decoration-none text-muted">Information</a></li>
-            <li><a href="#" class="text-decoration-none text-muted">About Us</a></li>
-            <li><a href="#" class="text-decoration-none text-muted">Careers</a></li>
-            <li><a href="#" class="text-decoration-none text-muted">Nest Stories</a></li>
-          </ul>
-        </div>
-        <div class="col-md-2 mb-4">
-          <h6 class="fw-bold">Useful Links</h6>
-          <ul class="list-unstyled text-muted">
-            <li><a href="#" class="text-decoration-none text-muted">Cancellation & Returns</a></li>
-            <li><a href="#" class="text-decoration-none text-muted">Report Infringement</a></li>
-            <li><a href="#" class="text-decoration-none text-muted">Payments</a></li>
-            <li><a href="#" class="text-decoration-none text-muted">Shipping</a></li>
-            <li><a href="#" class="text-decoration-none text-muted">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="col-md-3 mb-4">
-          <h6 class="fw-bold">Our Newsletter</h6>
-          <p class="text-muted small">Subscribe to the mailing list to receive updates on the new arrivals and other discounts</p>
-          <form class="d-flex mb-2">
-            <input type="email" class="form-control rounded-0" placeholder="Your email address">
-            <button class="btn btn-success rounded-0 ms-2">Subscribe</button>
-          </form>
-          <small class="text-muted">I would like to receive news and special offer</small>
-        </div>
-      </div>
-      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3 border-top">
-        <div class="mb-2 mb-md-0">
-          <small>Copyright 2025 <strong class="text-dark">Ekomart</strong>. All rights reserved.</small>
-        </div>
-        <div class="d-flex align-items-center">
-          <span class="me-2">Follow Us:</span>
-          <div class="d-flex gap-2">
-            <a href="#" class="text-dark"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="text-dark"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="text-dark"><i class="bi bi-youtube"></i></a>
-            <a href="#" class="text-dark"><i class="bi bi-whatsapp"></i></a>
-            <a href="#" class="text-dark"><i class="bi bi-instagram"></i></a>
+    <!-- Product List -->
+    <div class="col-lg-9">
+      <div class="row" id="productList"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// ----------------- Bakery Products -----------------
+const products = [
+  { id: 301, name: 'Whole Wheat Bread', category: 'Bread', brand: 'Britannia', price: 40, img: './img/bread1.jpg', badge: 'Fresh', badgeClass: 'bg-success text-white', oldPrice: 45 },
+  { id: 302, name: 'Brown Bread', category: 'Bread', brand: 'Harvest', price: 45, img: './img/bread2.jpg', badge: 'Healthy', badgeClass: 'bg-primary text-white', oldPrice: 50 },
+  { id: 303, name: 'Chocolate Cake', category: 'Cake', brand: 'Monginis', price: 350, img: './img/cake1.jpg', badge: 'Best Seller', badgeClass: 'bg-danger text-white', oldPrice: 400 },
+  { id: 304, name: 'Black Forest Cake', category: 'Cake', brand: 'Monginis', price: 450, img: './img/cake2.jpg', badge: 'New', badgeClass: 'bg-info text-dark', oldPrice: 500 },
+  { id: 305, name: 'Butter Cookies', category: 'Cookies', brand: 'Sunfeast', price: 120, img: './img/cookies1.jpg', badge: 'Hot', badgeClass: 'bg-warning text-dark', oldPrice: 140 },
+  { id: 306, name: 'Choco Chip Cookies', category: 'Cookies', brand: 'Britannia', price: 150, img: './img/cookies2.jpg', badge: 'Fresh', badgeClass: 'bg-success text-white', oldPrice: 170 },
+  { id: 307, name: 'Strawberry Pastry', category: 'Pastry', brand: 'Monginis', price: 80, img: './img/pastry1.jpg', badge: 'Popular', badgeClass: 'bg-danger text-white', oldPrice: 100 },
+  { id: 308, name: 'Chocolate Pastry', category: 'Pastry', brand: 'Amul', price: 90, img: './img/pastry2.jpg', badge: 'New', badgeClass: 'bg-info text-dark', oldPrice: 110 },
+  { id: 309, name: 'Glazed Donut', category: 'Donut', brand: 'Amul', price: 70, img: './img/donut1.jpg', badge: 'Sweet Deal', badgeClass: 'bg-warning text-dark', oldPrice: 85 },
+  { id: 310, name: 'Choco Donut', category: 'Donut', brand: 'Monginis', price: 75, img: './img/donut2.jpg', badge: 'Fresh', badgeClass: 'bg-success text-white', oldPrice: 90 },
+  { id: 311, name: 'Blueberry Muffin', category: 'Muffin', brand: 'Harvest', price: 60, img: './img/muffin1.jpg', badge: 'Best Seller', badgeClass: 'bg-danger text-white', oldPrice: 75 },
+  { id: 312, name: 'Chocolate Muffin', category: 'Muffin', brand: 'Britannia', price: 65, img: './img/muffin2.jpg', badge: 'Hot', badgeClass: 'bg-primary text-white', oldPrice: 80 }
+];
+
+// ----------------- Render Products -----------------
+function renderProducts() {
+  const productList = document.getElementById('productList');
+  productList.innerHTML = '';
+
+  const selectedCategories = Array.from(document.querySelectorAll('.category-filter:checked')).map(cb => cb.value);
+  const selectedBrands = Array.from(document.querySelectorAll('.brand-filter:checked')).map(cb => cb.value);
+  const maxPrice = parseInt(document.getElementById('priceRange').value) || 500;
+
+  let filtered = products.filter(p => {
+    const catMatch = selectedCategories.length === 0 || selectedCategories.includes(p.category);
+    const brandMatch = selectedBrands.length === 0 || selectedBrands.includes(p.brand);
+    const priceMatch = p.price <= maxPrice;
+    return catMatch && brandMatch && priceMatch;
+  });
+
+  if (filtered.length === 0) {
+    productList.innerHTML = '<p class="text-muted">No products match your filters.</p>';
+    return;
+  }
+
+  filtered.forEach(p => {
+    productList.innerHTML += `
+      <div class="col-md-4 mb-4">
+        <div class="card product-card h-100 position-relative">
+          <span class="badge ${p.badgeClass} badge-position">${p.badge}</span>
+          <img src="${p.img}" class="card-img-top" alt="${p.name}">
+          <div class="card-body text-center">
+            <h6 class="card-title">${p.name}</h6>
+            <p><span class="price">₹${p.price}</span> <span class="old-price">₹${p.oldPrice}</span></p>
+            <button class="btn btn-sm btn-success w-100 add-to-cart" 
+              data-id="${p.id}" data-name="${p.name}" data-price="${p.price}" data-img="${p.img}">Add to Cart</button>
           </div>
         </div>
       </div>
-      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
-        <div class="mb-2 mb-md-0">
-          <span class="me-2">Payment Accepts:</span>
-          <img src="https://brandlogos.net/wp-content/uploads/2014/10/visa-logo.png" alt="Visa" height="25">
-          <img src="https://pngimg.com/uploads/mastercard/mastercard_PNG24.png" alt="Mastercard" height="25">
-          <img src="https://www.top-bank.ch/images/logo_540/paypal.png" alt="Paypal" height="25">
-          <img src="https://cdn-icons-png.flaticon.com/256/825/825539.png" alt="American Express" height="25">
-        </div>
-        <div>
-          <span class="me-2">Download App</span>
-          <img src="https://brandlogos.net/wp-content/uploads/2021/10/Google-Pay-logo-symbol-1.png" alt="Google Play" height="35">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlhKAByCkA9Om3lRlLKWOS-CrhYniOnGFqjQ&s" alt="App Store" height="35">
-        </div>
-      </div>
-    </div>
-  </footer>
+    `;
+  });
+
+  // Bind Add to Cart
+  document.querySelectorAll('.add-to-cart').forEach(btn => {
+    btn.addEventListener('click', function() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let existing = cart.find(item => item.id == this.dataset.id);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ id: this.dataset.id, name: this.dataset.name, price: parseFloat(this.dataset.price), img: this.dataset.img, qty: 1 });
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(this.dataset.name + " added to cart!");
+    });
+  });
+}
+
+// ----------------- Event Listeners -----------------
+document.querySelectorAll('.category-filter, .brand-filter').forEach(cb => {
+  cb.addEventListener('change', renderProducts);
+});
+document.getElementById('priceRange').addEventListener('input', function() {
+  document.getElementById('priceValue').textContent = this.value;
+  renderProducts();
+});
+
+// Initial Load
+renderProducts();
+</script>
 </body>
 </html>
