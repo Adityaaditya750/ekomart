@@ -38,8 +38,10 @@ function renderCart() {
     subtotal += itemSubtotal;
 
     const tr = document.createElement("tr");
+    // Check if image exists by attempting to load it, fallback if error
+    const imgSrc = item.image && item.image.trim() ? item.image : 'https://via.placeholder.com/70';
     tr.innerHTML = `
-      <td><img src="${item.image || 'https://via.placeholder.com/70'}" class="product-img" alt="${escapeHtml(item.name)}"></td>
+      <td><img src="${imgSrc}" class="product-img" alt="${escapeHtml(item.name)}" onerror="this.onerror=null;this.src='https://via.placeholder.com/70';"></td>
       <td>${escapeHtml(item.name)}</td>
       <td>₹${(parseFloat(item.price) || 0).toFixed(2)}</td>
       <td>
