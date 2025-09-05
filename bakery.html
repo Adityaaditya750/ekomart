@@ -17,52 +17,87 @@
 </head>
 <body>
 
-<div class="container-fluid mt-4">
+
+<!-- ================== Body Section (Sidebar + Products) ================== -->
+<div class="container-fluid py-5">
   <div class="row">
-
     <!-- Sidebar -->
-    <div class="col-lg-3">
-      <!-- Categories -->
-      <div class="bg-white border rounded-3 shadow-sm p-3 mb-4">
-        <h6 class="fw-bold mb-2">Bakery Categories</h6>
-        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" value="Bread" id="cat-bread"><label class="form-check-label" for="cat-bread">Bread</label></div>
-        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" value="Cake" id="cat-cake"><label class="form-check-label" for="cat-cake">Cakes</label></div>
-        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" value="Cookies" id="cat-cookies"><label class="form-check-label" for="cat-cookies">Cookies</label></div>
-        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" value="Pastry" id="cat-pastry"><label class="form-check-label" for="cat-pastry">Pastries</label></div>
-        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" value="Donut" id="cat-donut"><label class="form-check-label" for="cat-donut">Donuts</label></div>
-        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" value="Muffin" id="cat-muffin"><label class="form-check-label" for="cat-muffin">Muffins</label></div>
-      </div>
-
-      <!-- Brands -->
-      <div class="bg-white border rounded-3 shadow-sm p-3 mb-4">
-        <h6 class="fw-bold mb-2">Bakery Brands</h6>
-        <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="Britannia" id="brand-brit"><label class="form-check-label" for="brand-brit">Britannia</label></div>
-        <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="Amul" id="brand-amul"><label class="form-check-label" for="brand-amul">Amul</label></div>
-        <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="Harvest" id="brand-harvest"><label class="form-check-label" for="brand-harvest">Harvest</label></div>
-        <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="Monginis" id="brand-mong"><label class="form-check-label" for="brand-mong">Monginis</label></div>
-        <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="Sunfeast" id="brand-sun"><label class="form-check-label" for="brand-sun">ITC Sunfeast</label></div>
-      </div>
-
-      <!-- Price -->
+    <aside class="col-md-3">
       <div class="bg-white border rounded-3 shadow-sm p-3 mb-4">
         <h6 class="fw-bold mb-2">Price Range</h6>
-        <input type="range" class="form-range" min="10" max="500" step="5" id="priceRange" value="500">
-        <p>Up to ₹<span id="priceValue">500</span></p>
+        <input type="range" class="form-range" id="priceRange" min="10" max="500" value="500">
+        <p class="small mb-2">Price: ₹10 – <span id="priceValue">500</span></p>
+        <button class="btn btn-success w-100">Filter</button>
       </div>
-    </div>
-
-    <!-- Product List -->
-    <div class="col-lg-9">
-      <div class="row" id="productList"></div>
-    </div>
+      <div class="bg-white border rounded-3 shadow-sm p-3 mb-4">
+        <h6 class="fw-bold mb-2">Bakery Categories</h6>
+        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" id="bread" value="Bread"><label class="form-check-label" for="bread">Bread</label></div>
+        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" id="cake" value="Cake"><label class="form-check-label" for="cake">Cake</label></div>
+        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" id="cookies" value="Cookies"><label class="form-check-label" for="cookies">Cookies</label></div>
+        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" id="pastry" value="Pastry"><label class="form-check-label" for="pastry">Pastry</label></div>
+        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" id="donut" value="Donut"><label class="form-check-label" for="donut">Donut</label></div>
+        <div class="form-check"><input class="form-check-input category-filter" type="checkbox" id="muffin" value="Muffin"><label class="form-check-label" for="muffin">Muffin</label></div>
+      </div>
+      <div class="bg-white border rounded-3 shadow-sm p-3 mb-4">
+        <h6 class="fw-bold mb-2">Select Brands</h6>
+        <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" id="britannia" value="Britannia"><label class="form-check-label" for="britannia">Britannia</label></div>
+        <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" id="amul" value="Amul"><label class="form-check-label" for="amul">Amul</label></div>
+        <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" id="harvest" value="Harvest"><label class="form-check-label" for="harvest">Harvest</label></div>
+        <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" id="monginis" value="Monginis"><label class="form-check-label" for="monginis">Monginis</label></div>
+        <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" id="sunfeast" value="Sunfeast"><label class="form-check-label" for="sunfeast">ITC Sunfeast</label></div>
+      </div>
+    </aside>
+    <!-- Products Grid -->
+    <main class="col-md-9">
+      <div class="row g-4" id="productList">
+        <!-- Product cards will be rendered by JS -->
+      </div>
+    </main>
   </div>
 </div>
 
-<!-- Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Floating Cart Counter and Sidebar (same as fruits-vegetables.html) -->
+<div class="position-fixed bottom-0 end-0 bg-success text-white px-3 py-2 rounded-top-start shadow"
+     style="z-index:1050; font-weight:500; min-width:260px;">
+  🛒 Cart Items: <span id="cartCount">0</span>
+  <button class="btn btn-light btn-sm ms-2" id="showCartBtn">View Cart</button>
+  <div id="cartSidebar" class="bg-white text-dark border rounded shadow p-3 position-fixed end-0 bottom-0" style="width:300px; max-height:60vh; overflow-y:auto; display:none; z-index:1100;">
+    <h6 class="fw-bold mb-2">Your Cart</h6>
+    <ul id="cartList" class="list-unstyled mb-2"></ul>
+    <a href="cart.html" class="btn btn-primary w-100 mb-2">Go to Cart Page</a>
+    <button class="btn btn-success w-100" id="closeCartBtn">Close</button>
+  </div>
+</div>
 
 <script>
-// ----------------- Bakery Products -----------------
+// Sync cart counters on page load
+function syncCartCounters() {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+  if (document.getElementById('cartCount')) document.getElementById('cartCount').textContent = totalQty;
+  if (document.getElementById('cart-count')) document.getElementById('cart-count').textContent = totalQty;
+}
+document.addEventListener('DOMContentLoaded', syncCartCounters);
+
+// Price range filter
+const priceRange = document.getElementById('priceRange');
+const priceValue = document.getElementById('priceValue');
+if (priceRange && priceValue) {
+  priceRange.addEventListener('input', function() {
+    priceValue.textContent = priceRange.value;
+    renderProducts();
+  });
+}
+
+// Cart sidebar show/hide
+document.getElementById('showCartBtn').addEventListener('click', function() {
+  document.getElementById('cartSidebar').style.display = 'block';
+});
+document.getElementById('closeCartBtn').addEventListener('click', function() {
+  document.getElementById('cartSidebar').style.display = 'none';
+});
+
+// Bakery products array
 const products = [
   { id: 301, name: 'Whole Wheat Bread', category: 'Bread', brand: 'Britannia', price: 40, img: './img/bread1.jpg', badge: 'Fresh', badgeClass: 'bg-success text-white', oldPrice: 45 },
   { id: 302, name: 'Brown Bread', category: 'Bread', brand: 'Harvest', price: 45, img: './img/bread2.jpg', badge: 'Healthy', badgeClass: 'bg-primary text-white', oldPrice: 50 },
@@ -78,61 +113,94 @@ const products = [
   { id: 312, name: 'Chocolate Muffin', category: 'Muffin', brand: 'Britannia', price: 65, img: './img/muffin2.jpg', badge: 'Hot', badgeClass: 'bg-primary text-white', oldPrice: 80 }
 ];
 
-// ----------------- Render Products -----------------
 function renderProducts() {
   const productList = document.getElementById('productList');
   productList.innerHTML = '';
-
+  // Get selected filters
   const selectedCategories = Array.from(document.querySelectorAll('.category-filter:checked')).map(cb => cb.value);
   const selectedBrands = Array.from(document.querySelectorAll('.brand-filter:checked')).map(cb => cb.value);
   const maxPrice = parseInt(document.getElementById('priceRange').value) || 500;
-
+  // Filter products
   let filtered = products.filter(p => {
     const catMatch = selectedCategories.length === 0 || selectedCategories.includes(p.category);
     const brandMatch = selectedBrands.length === 0 || selectedBrands.includes(p.brand);
     const priceMatch = p.price <= maxPrice;
     return catMatch && brandMatch && priceMatch;
   });
-
+  // Render cards
   if (filtered.length === 0) {
-    productList.innerHTML = '<p class="text-muted">No products match your filters.</p>';
+    productList.innerHTML = '<div class="col-12 text-center text-muted">No products found.</div>';
     return;
   }
-
-  filtered.forEach(p => {
+  filtered.forEach(product => {
     productList.innerHTML += `
-      <div class="col-md-4 mb-4">
-        <div class="card product-card h-100 position-relative">
-          <span class="badge ${p.badgeClass} badge-position">${p.badge}</span>
-          <img src="${p.img}" class="card-img-top" alt="${p.name}">
-          <div class="card-body text-center">
-            <h6 class="card-title">${p.name}</h6>
-            <p><span class="price">₹${p.price}</span> <span class="old-price">₹${p.oldPrice}</span></p>
-            <button class="btn btn-sm btn-success w-100 add-to-cart" 
-              data-id="${p.id}" data-name="${p.name}" data-price="${p.price}" data-img="${p.img}">Add to Cart</button>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="${product.img}" class="card-img-top" alt="${product.name}" style="height:220px;object-fit:cover;">
+          <div class="card-body d-flex flex-column">
+            <span class="badge ${product.badgeClass} mb-2">${product.badge}</span>
+            <h5 class="card-title">${product.name}</h5>
+            <p class="card-text mb-1">Brand: <span class="fw-semibold">${product.brand}</span></p>
+            <p class="card-text mb-1">Category: <span class="fw-semibold">${product.category}</span></p>
+            <div class="mb-2">
+              <span class="fw-bold text-success fs-5">₹${product.price}</span>
+              <span class="text-muted text-decoration-line-through ms-2">₹${product.oldPrice}</span>
+            </div>
+            <button class="btn btn-success mt-auto add-to-cart-btn" 
+              data-id="${product.id}"
+              data-name="${product.name}" 
+              data-price="${product.price}" 
+              data-img="${product.img}">
+              <i class="bi bi-cart-plus"></i> Add to Cart
+            </button>
           </div>
         </div>
       </div>
     `;
   });
+  attachAddToCart();
+}
 
-  // Bind Add to Cart
-  document.querySelectorAll('.add-to-cart').forEach(btn => {
+function attachAddToCart() {
+  document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
     btn.addEventListener('click', function() {
+      const id = this.getAttribute('data-id');
+      const name = this.getAttribute('data-name');
+      const price = parseFloat(this.getAttribute('data-price'));
+      const img = this.getAttribute('data-img');
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      let existing = cart.find(item => item.id == this.dataset.id);
-      if (existing) {
-        existing.qty += 1;
+      let found = cart.find(item => item.id === id);
+      if (found) {
+        found.qty += 1;
       } else {
-        cart.push({ id: this.dataset.id, name: this.dataset.name, price: parseFloat(this.dataset.price), img: this.dataset.img, qty: 1 });
+        cart.push({ id, name, price, qty: 1, image: img });
       }
       localStorage.setItem('cart', JSON.stringify(cart));
-      alert(this.dataset.name + " added to cart!");
+      syncCartCounters();
+      renderCartSidebar();
     });
   });
 }
 
-// ----------------- Event Listeners -----------------
+function renderCartSidebar() {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cartList = document.getElementById('cartList');
+  cartList.innerHTML = '';
+  if (cart.length === 0) {
+    cartList.innerHTML = '<li class="text-muted">Your cart is empty.</li>';
+    return;
+  }
+  cart.forEach(item => {
+    cartList.innerHTML += `<li class="mb-2 d-flex align-items-center">
+      <img src="${item.image}" alt="${item.name}" style="width:40px;height:40px;object-fit:cover;" class="me-2 rounded">
+      <span class="flex-grow-1">${item.name}</span>
+      <span class="fw-bold text-success">₹${item.price}</span>
+      <span class="badge bg-secondary ms-2">x${item.qty}</span>
+    </li>`;
+  });
+}
+
+// Attach filter listeners
 document.querySelectorAll('.category-filter, .brand-filter').forEach(cb => {
   cb.addEventListener('change', renderProducts);
 });
@@ -140,8 +208,12 @@ document.getElementById('priceRange').addEventListener('input', function() {
   document.getElementById('priceValue').textContent = this.value;
   renderProducts();
 });
+document.querySelector('.btn-success.w-100').addEventListener('click', function() {
+  priceValue.textContent = priceRange.value;
+  renderProducts();
+});
 
-// Initial Load
+// Initial render
 renderProducts();
 </script>
 </body>
